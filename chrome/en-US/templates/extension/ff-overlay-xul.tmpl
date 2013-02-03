@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://[:= $_.package :]/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://[:= $_.package :]/locale/overlay.dtd">
+<overlay id="[:= $_.package :]-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <script src="ff-overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="[:= $_.package :]-strings" src="chrome://[:= $_.package :]/locale/overlay.properties"/>
+  </stringbundleset>
+
+[: if ($_.ui.indexOf("mainmenu") != -1) { :]
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="[:= $_.package :]-hello" label="&[:= $_.package :].label;" 
+              oncommand="[:= $_.package :].onMenuItemCommand(event);"/>
+  </menupopup>
+
+[: } :]
+[: if ($_.ui.indexOf("contextmenu") != -1) { :]
+
+  <popup id="contentAreaContextMenu">
+    <menuitem id="context-[:= $_.package :]" label="&[:= $_.package :]Context.label;"
+              accesskey="&[:= $_.package :]Context.accesskey;"
+              insertafter="context-stop"
+              oncommand="[:= $_.package :].onMenuItemCommand(event)"/>
+  </popup>
+
+[: } :]
+[: if ($_.ui.indexOf("toolbarbutton") != -1) { :]
+
+  <toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="[:= $_.package :]-toolbar-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+    label="&[:= $_.package :]Toolbar.label;" tooltiptext="&[:= $_.package :]Toolbar.tooltip;"
+    oncommand="[:= $_.package :].onToolbarButtonCommand()"/>
+  </toolbarpalette>
+
+[: } :]
+[: if ($_.ui.indexOf("sidebar") != -1) { :]
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_openSidebar_[:= $_.package :]" observes="viewSidebar_[:= $_.package :]" />
+  </menupopup>
+  
+  <keyset id="mainKeyset">
+    <key id="key_openSidebar_[:= $_.package :]" command="viewSidebar_[:= $_.package :]" />
+  </keyset>
+  
+  <broadcasterset id="mainBroadcasterSet"> 
+    <broadcaster id="viewSidebar_[:= $_.package :]" 
+                 label="&[:= $_.package :]Sidebar.label;"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://[:= $_.package :]/content/ff-sidebar.xul"
+                 sidebartitle="&[:= $_.package :]Sidebar.label;"
+                 oncommand="toggleSidebar('viewSidebar_[:= $_.package :]');" />
+  </broadcasterset>
+[: } :]
+
+</overlay>

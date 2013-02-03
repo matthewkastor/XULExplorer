@@ -1,0 +1,11 @@
+<!ENTITY helpBrowser.title    "XUL Explorer Help">
+<!ENTITY helpBack.label       "Back">
+<!ENTITY helpBack.tooltip     "Back">
+<!ENTITY helpForward.label    "Forward">
+<!ENTITY helpForward.tooltip  "Forward">
+<!ENTITY helpReload.label     "Reload">
+<!ENTITY helpReload.tooltip   "Reload">
+<!ENTITY helpStop.label       "Stop">
+<!ENTITY helpStop.tooltip     "Stop">
+<!ENTITY helpGo.label         "Go">
+<!ENTITY helpGo.tooltip       "Go">

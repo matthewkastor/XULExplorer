@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>[:= $_.id :]</em:id>
+    <em:type>2</em:type>
+    <em:name>[:= $_.name :]</em:name>
+    <em:version>[:= $_.version :]</em:version>
+    <em:creator>[:= $_.author :]</em:creator>
+[: for (var i=0; i<$_.contributors.length; i++) { :]
+    <em:contributor>[:= $_.contributors[i].name :]</em:contributor>
+[: } :]
+[: if ($_.description.length > 0) { :]
+    <em:description>[:= $_.description :]</em:description>
+[: } :]
+[: if ($_.homepageURL.length > 0) { :]
+    <em:homepageURL>[:= $_.homepageURL :]</em:homepageURL>
+[: } :]
+[: if ($_.updateURL.length > 0) { :]
+    <em:updateURL>[:= $_.updateURL :]</em:updateURL>
+[: } :]
+[: if ($_.aboutURL.length > 0) { :]
+    <em:aboutURL>[:= $_.aboutURL :]</em:aboutURL>
+[: } :]
+[: if ($_.optionsURL.length > 0) { :]
+    <em:optionsURL>[:= $_.optionsURL :]</em:optionsURL>
+[: } :]
+[: if ($_.iconURL.length > 0) { :]
+    <em:iconURL>[:= $_.iconURL :]</em:iconURL>
+[: } :]
+[: for (var i=0; i<$_.targets.length; i++) { :]
+    <em:targetApplication>
+      <Description>
+        <em:id>[:= $_.targets[i].id :]</em:id> <!-- [:= $_.targets[i].name :] -->
+        <em:minVersion>[:= $_.targets[i].minVersion :]</em:minVersion>
+        <em:maxVersion>[:= $_.targets[i].maxVersion :]</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+[: } :]
+  </Description>
+</RDF>

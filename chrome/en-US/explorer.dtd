@@ -1,0 +1,168 @@
+<!ENTITY explorer.title         "XUL Explorer">
+
+<!ENTITY file.label             "File">
+<!ENTITY file.accesskey         "F">
+
+<!ENTITY fileNew.label          "New">
+<!ENTITY fileNew.accesskey      "N">
+
+<!ENTITY fileNewBlank.label     "Blank Document">
+<!ENTITY fileNewBlank.accesskey "B">
+<!ENTITY fileNewBlank.key       "N">
+
+<!ENTITY fileNewExtension.label     "Extension">
+<!ENTITY fileNewExtension.accesskey "E">
+
+<!ENTITY fileNewApplication.label     "Application">
+<!ENTITY fileNewApplication.accesskey "A">
+
+<!ENTITY fileOpen.label         "Open...">
+<!ENTITY fileOpen.accesskey     "O">
+<!ENTITY fileOpen.key           "O">
+<!ENTITY fileOpen.tooltip       "Open">
+
+<!ENTITY fileSave.label         "Save">
+<!ENTITY fileSave.accesskey     "S">
+<!ENTITY fileSave.key           "S">
+<!ENTITY fileSave.tooltip       "Save">
+
+<!ENTITY fileSaveAs.label       "Save As...">
+<!ENTITY fileSaveAs.accesskey   "A">
+<!ENTITY fileSaveAs.tooltip     "Save As">
+
+<!ENTITY fileClose.label        "Close">
+<!ENTITY fileClose.accesskey    "C">
+<!ENTITY fileClose.tooltip      "Close">
+
+<!ENTITY filePageSetup.label    "Page Setup...">
+<!ENTITY filePageSetup.accesskey "U">
+
+<!ENTITY filePrint.label        "Print...">
+<!ENTITY filePrint.accesskey    "P">
+<!ENTITY filePrint.key          "P">
+
+<!ENTITY fileExit.label         "Exit">
+<!ENTITY fileExit.accesskey     "X">
+
+<!ENTITY edit.label             "Edit">
+<!ENTITY edit.accesskey         "E">
+
+<!ENTITY editUndo.label         "Undo">
+<!ENTITY editUndo.accesskey     "U">
+<!ENTITY editUndo.key           "Z">
+<!ENTITY editUndo.tooltip       "Undo changes">
+
+<!ENTITY editRedo.label         "Redo">
+<!ENTITY editRedo.accesskey     "R">
+<!ENTITY editRedo.key           "Y">
+<!ENTITY editRedo.tooltip       "Redo changes">
+
+<!ENTITY editCut.label          "Cut">
+<!ENTITY editCut.accesskey      "T">
+<!ENTITY editCut.key            "X">
+<!ENTITY editCut.tooltip        "Cut">
+
+<!ENTITY editCopy.label         "Copy">
+<!ENTITY editCopy.accesskey     "C">
+<!ENTITY editCopy.key           "C">
+<!ENTITY editCopy.tooltip       "Copy">
+
+<!ENTITY editPaste.label        "Paste">
+<!ENTITY editPaste.accesskey    "P">
+<!ENTITY editPaste.key          "V">
+<!ENTITY editPaste.tooltip      "Paste">
+
+<!ENTITY editDelete.label       "Delete">
+<!ENTITY editDelete.accesskey   "D">
+<!ENTITY editDelete.tooltip     "Delete">
+
+<!ENTITY editSelectAll.label    "Select All">
+<!ENTITY editSelectAll.accesskey "A">
+<!ENTITY editSelectAll.key      "A">
+<!ENTITY editSelectAll.tooltip  "Select all">
+
+<!ENTITY view.label             "View">
+<!ENTITY view.accesskey         "V">
+
+<!ENTITY viewSidebar.label      "Sidebar">
+<!ENTITY viewSidebar.accesskey  "S">
+
+<!ENTITY viewMessages.label     "Messages">
+<!ENTITY viewMessages.accesskey "M">
+
+<!ENTITY viewRefresh.label      "Refresh Preview">
+<!ENTITY viewRefresh.accesskey  "R">
+<!ENTITY viewRefresh.tooltip    "Refresh Preview">
+
+<!ENTITY viewPreview.label      "Preview in Window">
+<!ENTITY viewPreview.accesskey  "P">
+<!ENTITY viewPreview.tooltip    "Preview in Window">
+
+<!ENTITY viewFormatter.label    "XUL Formatter">
+<!ENTITY viewFormatter.accesskey "F">
+
+<!ENTITY tools.label            "Tools">
+<!ENTITY tools.accesskey        "T">
+
+<!ENTITY toolsChecker.label     "XUL Checker">
+<!ENTITY toolsChecker.accesskey "X">
+
+<!ENTITY toolsConsole.label     "Error Console">
+<!ENTITY toolsConsole.accesskey "C">
+
+<!ENTITY toolsTestExtension.label     "Test Extension...">
+<!ENTITY toolsTestExtension.accesskey "E">
+
+<!ENTITY toolsAddons.label      "Addons...">
+<!ENTITY toolsAddons.accesskey  "A">
+
+<!ENTITY toolsReloadChrome.label     "Reload Chrome">
+<!ENTITY toolsReloadChrome.accesskey "R">
+
+<!ENTITY toolsOptions.label     "Options...">
+<!ENTITY toolsOptions.accesskey "O">
+
+<!ENTITY help.label             "Help">
+<!ENTITY help.accesskey         "H">
+
+<!ENTITY helpHelp.label         "XUL Explorer Help">
+<!ENTITY helpHelp.accesskey     "H">
+
+<!ENTITY helpXULReference.label "XUL Element Reference">
+<!ENTITY helpXULReference.accesskey "E">
+
+<!ENTITY helpXULTutorial.label  "XUL Tutorial">
+<!ENTITY helpXULTutorial.accesskey "T">
+
+<!ENTITY helpJSReference.label      "JavaScript Reference">
+<!ENTITY helpJSReference.accesskey  "J">
+
+<!ENTITY helpKeyword.label      "Keyword Lookup">
+<!ENTITY helpKeyword.accesskey  "K">
+
+<!ENTITY helpUpdate.label       "Check for Updates...">
+<!ENTITY helpUpdate.accesskey   "C">
+
+<!ENTITY helpAbout.label        "About">
+<!ENTITY helpAbout.accesskey    "A">
+
+<!ENTITY messagesClear.label    "Clear Messages">
+
+<!ENTITY editor.label           "Code">
+<!ENTITY editor.tooltip         "Display code editor">
+
+<!ENTITY preview.label          "Preview">
+<!ENTITY preview.tooltip        "Display code preview">
+
+<!ENTITY messages.label         "Messages">
+<!ENTITY messagesClose.tooltip  "Close messages pane">
+
+<!ENTITY sidebar.label          "Sidebar">
+<!ENTITY sidebarClose.tooltip   "Close sidebar">
+
+<!ENTITY snippetTitle.label     "Snippets">
+<!ENTITY snippetType.label      "Category">
+<!ENTITY snippetType.accessKey  "C">
+<!ENTITY snippetInsert.label    "Insert">
+
+<!ENTITY statusConsole.tooltip  "Double-click to view Error Console">

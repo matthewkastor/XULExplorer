@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://explorer/skin/options.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://explorer/locale/options.dtd">
+
+<prefwindow id="options" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&options.title;">
+
+<prefpane id="paneMain" label="&paneGeneral.label;">
+  <preferences>
+    <preference id="pref_startupscript" name="explorer.startup.script" type="string"/>
+    <preference id="pref_autorefresh" name="explorer.preview.autorefresh" type="bool"/>
+  </preferences>
+
+  <groupbox id="startup">
+    <caption label="&startup.label;"/>
+
+    <hbox align="center">
+      <label value="&startupScript.label;" accesskey="&startupScript.accesskey;" control="startupscript"/>
+      <textbox preference="pref_startupscript" id="startupscript" width="250px"/>
+    </hbox>
+  </groupbox>
+
+  <groupbox id="preview">
+    <caption label="&preview.label;"/>
+
+    <checkbox preference="pref_autorefresh" id="autorefresh" label="&autoRefresh.label;" accesskey="&autoRefresh.accesskey;"/>
+  </groupbox>
+</prefpane>
+
+<prefpane id="paneSnippets" label="&paneSnippets.label;">
+  <script type="application/x-javascript" src="chrome://explorer/content/options.js"/>
+
+  <stringbundle id="strings_options" src="chrome://explorer/locale/options.properties"/>
+
+  <preferences>
+    <preference id="pref_usersnippets" name="explorer.snippets.user" type="string"/>
+  </preferences>
+
+  <description style="max-width: 40em; white-space: -moz-pre-wrap;">&userSnippets.hint;</description>
+  <separator class="thin"/>
+  <label value="&userSnippets.label;" accesskey="&userSnippets.accesskey;" control="usersnippets"/>
+  <hbox align="center">
+    <textbox id="usersnippets" flex="1" preference="pref_usersnippets"/>
+    <button id="choosesnippets" oncommand="Options.chooseSnippetsFolder();" accesskey="&chooseSnippets.accesskey;" label="&chooseSnippets.label;"/>
+  </hbox>
+</prefpane>
+
+<prefpane id="paneManifests" label="&paneManifests.label;">
+  <script type="application/x-javascript" src="chrome://explorer/content/options.js"/>
+
+  <stringbundle id="strings_options" src="chrome://explorer/locale/options.properties"/>
+
+  <preferences>
+    <preference id="pref_usermanifests" name="explorer.manifest.locations" type="string"/>
+  </preferences>
+
+  <popupset id="manifest_popupset">
+    <popup id="manifests_list_popup">
+      <menuitem label="&manifests.remove;" oncommand="Options.removeManifest(event);"/>
+    </popup>
+  </popupset>
+
+  <description style="max-width: 40em; white-space: -moz-pre-wrap;">&manifests.hint;</description>
+  <separator class="thin"/>
+  <label value="&manifests.label;" accesskey="&manifests.accesskey;" control="manifests"/>
+  <hbox align="center">
+    <textbox id="manifests" flex="1"/>
+    <button id="addfolder" oncommand="Options.addManifestsFolder();" accesskey="&addFolder.accesskey;" label="&addFolder.label;"/>
+    <button id="choosefolder" oncommand="Options.chooseManifestsFolder();" accesskey="&chooseFolder.accesskey;" label="&chooseFolder.label;"/>
+  </hbox>
+  <listbox id="usermanifests_list" preference="pref_usermanifests" flex="1"
+        onkeypress="Options.manifestLocationsKeypress(event);"
+        onsynctopreference="return Options.getManifestLocations(event)"
+        onsyncfrompreference="return Options.displayManifestLocations(event);"/>
+</prefpane>
+</prefwindow>

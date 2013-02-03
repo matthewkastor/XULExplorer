@@ -1,0 +1,37 @@
+<!ENTITY extensionWizard.title    "Extension Project Wizard">
+
+<!ENTITY destination.label        "New Extension">
+<!ENTITY destination.description  "Create an extension for Firefox, Thunderbird or other Mozilla application.">
+<!ENTITY destination.hint         "This wizard will create the supporting files needed to make an extension.">
+<!ENTITY folder.hint              "Where do you want to save the extension?">
+<!ENTITY folder.label             "Folder:">
+<!ENTITY folder.accesskey         "F">
+<!ENTITY chooseFolder.label       "Browse...">
+<!ENTITY chooseFolder.accesskey   "B">
+
+<!ENTITY general.label            "General">
+<!ENTITY general.description      "Enter information for the extension.">
+<!ENTITY general.link             "Learn more about install manifest entries">
+<!ENTITY name.label               "Name:">
+<!ENTITY package.label            "Package name:">
+<!ENTITY id.label                 "ID:">
+<!ENTITY version.label            "Version:">
+<!ENTITY description.label        "Description:">
+
+<!ENTITY resources.label          "Resources">
+<!ENTITY resources.description    "Enter supporting resources for the extension.">
+<!ENTITY resources.link           "Learn more about install manifest entries">
+
+<!ENTITY contributors.label       "Contributors">
+<!ENTITY contributors.description "List the developers who have worked on the extension.">
+<!ENTITY contributors.link        "Learn more about install manifest entries">
+
+<!ENTITY targets.label            "Targets">
+<!ENTITY targets.description      "Which applications are allowed to use your extension?">
+<!ENTITY targets.link             "Learn more about install manifest entries">
+
+<!ENTITY ui.label                 "UI Options">
+<!ENTITY ui.description           "What UI components should your extension support?">
+
+<!ENTITY events.label             "Events">
+<!ENTITY events.description       "Which events should your extension support?">

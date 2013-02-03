@@ -1,0 +1,271 @@
+/* global skin ------------------------------------------------------------- */
+@import url(chrome://global/skin/);
+
+/* toolbar ----------------------------------------------------------------- */
+
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none !important;
+}
+
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+toolbarbutton {
+  -moz-box-orient: vertical;
+  min-width: 0;
+  -moz-margin-end: 0px;
+}
+
+/* menus ------------------------------------------------------------------- */
+
+/* increase the distance between menuitem label and menuitem accel */
+.menu-accel,
+.menu-iconic-accel {
+  -moz-padding-start: 15px;
+}
+
+/* our icons are 16x16 so bump up the width for empty menu item,
+   so they line up */
+.menu-iconic-left {
+  min-width: 16px;
+}
+
+
+/* menus and buttons ------------------------------------------------------- */
+
+.menu-new-template {
+  list-style-image: url(chrome://explorer/skin/images/template.png);
+}
+
+#menu_newBlank {
+  list-style-image: url(chrome://explorer/skin/images/document.png);
+}
+
+#menu_newExtension {
+  list-style-image: url(chrome://explorer/skin/images/plugin.png);
+}
+
+#menu_newApplication {
+  list-style-image: url(chrome://explorer/skin/images/application.png);
+}
+
+#menu_open, #tool_open {
+  list-style-image: url(chrome://explorer/skin/images/open.png);
+}
+
+#menu_save, #tool_save {
+  list-style-image: url(chrome://explorer/skin/images/save.png);
+}
+
+#menu_undo, #tool_undo {
+  list-style-image: url(chrome://explorer/skin/images/undo.png);
+}
+
+#menu_redo, #tool_redo {
+  list-style-image: url(chrome://explorer/skin/images/redo.png);
+}
+
+#menu_cut, #tool_cut {
+  list-style-image: url(chrome://explorer/skin/images/cut.png);
+}
+
+#menu_cut[disabled="true"], #tool_cut[disabled="true"] {
+  list-style-image: url(chrome://explorer/skin/images/cut-disabled.png);
+}
+
+#menu_copy, #tool_copy {
+  list-style-image: url(chrome://explorer/skin/images/copy.png);
+}
+
+#menu_copy[disabled="true"], #tool_copy[disabled="true"] {
+  list-style-image: url(chrome://explorer/skin/images/copy-disabled.png);
+}
+
+#menu_paste, #tool_paste {
+  list-style-image: url(chrome://explorer/skin/images/paste.png);
+}
+
+#menu_delete, #tool_delete {
+  list-style-image: url(chrome://explorer/skin/images/delete.png);
+}
+
+#menu_selectAll, #tool_selectAll {
+  list-style-image: url(chrome://explorer/skin/images/selectall.png);
+}
+
+#menu_refresh, #tool_refresh {
+  list-style-image: url(chrome://explorer/skin/images/refresh.png);
+}
+
+#menu_preview, #tool_preview {
+  list-style-image: url(chrome://explorer/skin/images/preview-window.png);
+}
+
+#menu_checker, #tool_checker {
+  list-style-image: url(chrome://explorer/skin/images/scriptcheck.png);
+}
+
+#menu_console, #tool_console {
+  list-style-image: url(chrome://explorer/skin/images/errorconsole.png);
+}
+
+#menu_testExtension {
+  list-style-image: url(chrome://explorer/skin/images/lightning.png);
+}
+
+#menu_debugger, #tool_debugger {
+  list-style-image: url(chrome://explorer/skin/images/debugger.png);
+}
+
+#menu_inspector, #tool_inspector {
+  list-style-image: url(chrome://explorer/skin/images/inspector.png);
+}
+
+#menu_help, #tool_help {
+  list-style-image: url(chrome://explorer/skin/images/help.png);
+}
+
+
+/* workspace --------------------------------------------------------------- */
+
+#workspaceview_box {
+  border-bottom: 2px solid #000;
+  padding: 2px;
+}
+
+#workspaceview_editor {
+  -moz-box-orient: horizontal;
+  list-style-image: url(chrome://explorer/skin/images/script.png);
+  margin: 2px;
+}
+
+#workspaceview_preview {
+  -moz-box-orient: horizontal;
+  list-style-image: url(chrome://explorer/skin/images/preview.png);
+  margin: 2px;
+}
+
+/* statusbar --------------------------------------------------------------- */
+
+#img_jsconsole {
+  list-style-image: url(chrome://explorer/skin/images/valid.png);
+}
+
+#img_jsconsole[mode="error"] {
+  list-style-image: url(chrome://explorer/skin/images/error.png);
+}
+
+
+/* tabs -------------------------------------------------------------------- */
+
+#workspace_tabs {
+  -moz-appearance:none;
+  padding-top: 2px !important;
+}
+
+#workspace_tabs tab {
+  -moz-appearance:none;
+  height:22px;
+  background-color:transparent !important;
+  border:none !important;
+  border-bottom:2px solid #fff !important;
+}
+
+#workspace_tabs tab[selected='true'] {
+  -moz-appearance:none;
+  padding:1px 4px 2px 4px;
+  background-color:#fff !important;
+  border-top:1px solid #000 !important;
+  border-left:1px solid #000 !important;
+  border-right:1px solid #000 !important;
+  border-bottom:2px solid #fff !important;
+}
+
+#workspace_tabs .tabs-left {
+  -moz-border-bottom-colors:#fff;
+  width:10px;
+}
+
+#workspace_tabs .tabs-right {
+  -moz-border-bottom-colors:#fff;
+}
+
+#workspace_tabpanels {
+  padding: 0px !important;
+}
+
+#workspace_tabpanels > tabpanel > editor {
+  margin: 0px;
+}
+
+.tabs-closebutton {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton");
+  -moz-appearance: none;
+  border: none;
+  list-style-image: url(chrome://explorer/skin/images/close-button-black.png);
+  -moz-image-region: rect(0px 12px 11px 0px);
+  padding:0px;
+}
+
+.tabs-closebutton:hover {
+  -moz-image-region: rect(0px 24px 11px 12px);
+}
+
+
+#workspace_tabs .tab-icon {
+  list-style-image: url("chrome://explorer/skin/images/document.png");
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+#workspace_tabs tab[modified="true"] .tab-icon {
+  list-style-image: url("chrome://explorer/skin/images/document-modified.png");
+}
+
+/* misc -------------------------------------------------------------------- */
+
+/* remove margins from our boxes */
+#sidebar_box {
+  margin: 0px;
+}
+
+#messages_box {
+  overflow: auto;
+}
+
+#output_grid {
+  background-color: #fff;
+}
+
+#output_grid row:hover {
+  background-color: #f7f3f7;
+}
+
+#output_grid description {
+  white-space: pre;
+}
+
+#preview_box {
+  margin: 0px;
+}
+
+.paneheader {
+  font: message-box;
+  color: white;
+  background-color: #3169c6;
+  -moz-box-align: center;
+}
+
+.paneheader .tabs-closebutton {
+  -moz-appearance: none;
+  border: none;
+  list-style-image: url(chrome://explorer/skin/images/close-button-white.png);
+  -moz-image-region: rect(0px 12px 11px 0px);
+  padding:0px;
+}
+
+.paneheader .tabs-closebutton:hover {
+  -moz-image-region: rect(0px 24px 11px 12px);
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://explorer/skin/helpbrowser.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://explorer/locale/helpbrowser.dtd">
+
+<window id="helpbrowser" title="&helpBrowser.title;" style="width:800px; height:600px" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://explorer/content/utils/command.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/help/helpbrowser.js"/>
+
+  <commandset id="cmdset_helpbrowser">
+    <command id="cmd_back" label="&helpBack.label;" disabled="true" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_forward" label="&helpForward.label;" disabled="true" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_reload" label="&helpReload.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_stop" label="&helpStop.label;" disabled="true" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_go" label="&helpGo.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <toolbox>
+    <toolbar id="toolbar_helpbrowser" mode="icons">
+      <toolbarbutton id="tool_back" tooltiptext="&helpBack.tooltip;" command="cmd_back"/>
+      <toolbarbutton id="tool_forward" tooltiptext="&helpForward.tooltip;" command="cmd_forward"/>
+      <toolbarseparator/>
+      <toolbarbutton id="tool_reload" tooltiptext="&helpReload.tooltip;" command="cmd_reload"/>
+      <toolbarbutton id="tool_stop" tooltiptext="&helpStop.tooltip;" command="cmd_stop"/>
+      <toolbarseparator/>
+      <textbox id="tool_url" value="" flex="1" onchange="CommandUpdater.doCommand('cmd_go');"/>
+      <toolbarbutton id="tool_go" tooltiptext="&helpGo.tooltip;" command="cmd_go"/>
+    </toolbar>
+  </toolbox>
+
+  <browser flex="1" id="helpcontent" src="about:blank" type="content-primary"/>
+
+  <statusbar>
+    <statusbarpanel id="status" label="" crop="end" flex="1"/>
+    <progressmeter id="progress" mode="determined" value="0%" style="display: none"/>
+    <statusbarpanel id="security" label="" style="display: none"/>
+  </statusbar>
+</window>

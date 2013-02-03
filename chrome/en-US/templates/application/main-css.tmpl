@@ -1,0 +1,100 @@
+/* global skin ------------------------------------------------------------- */
+@import url(chrome://global/skin/);
+
+[: if ($_.ui.indexOf("toolbar") != -1) { :]
+/* toolbar ----------------------------------------------------------------- */
+
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none !important;
+}
+
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+toolbarbutton {
+  -moz-box-orient: vertical;
+}
+
+[: if ($_.workspace == "editor") { :]
+#cut_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/cut.png);
+}
+
+#copy_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/copy.png);
+}
+
+#paste_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/paste.png);
+}
+
+#bold_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/bold.png);
+}
+
+#italic_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/italic.png);
+}
+
+#underline_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/underline.png);
+}
+[: } :]
+
+[: if ($_.workspace == "browser") { :]
+#back_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/back.png);
+}
+
+#back_button[disabled="true"] {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/back-disabled.png);
+}
+
+#forward_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/forward.png);
+}
+
+#forward_button[disabled="true"] {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/forward-disabled.png);
+}
+
+#stop_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/stop.png);
+}
+
+#stop_button[disabled="true"] {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/stop-disabled.png);
+}
+
+#reload_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/reload.png);
+}
+
+#go_button {
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/go.png);
+}
+[: } :]
+
+[: } /* end toolbar */ :]
+
+[: if ($_.ui.indexOf("sidebar") != -1) { :]
+.paneheader {
+  font-family: verdana,tahoma,arial;
+  color: white;
+  background-color: #3169c6;
+  -moz-box-align: center;
+}
+
+.paneheader .tabs-closebutton {
+  -moz-appearance: none;
+  border: none;
+  list-style-image: url(chrome://[:= $_.package :]/skin/images/close-button.png);
+  -moz-image-region: rect(0px 12px 11px 0px);
+  padding:0px;
+}
+
+.paneheader .tabs-closebutton:hover {
+  -moz-image-region: rect(0px 24px 11px 12px);
+}
+[: } :]

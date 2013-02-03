@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://[:= $_.package :]/skin/[:= $_.source :].css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://[:= $_.package :]/locale/[:= $_.source :].dtd">
+
+<window id="main" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&title;" style="width: 700px; height: 500px;" persist="screenX screenY width height sizemode">
+
+  <script type="application/x-javascript" src="chrome://global/content/printUtils.js"/>
+[: if ($_.workspace == "browser") { :]
+  <script type="application/x-javascript" src="chrome://[:= $_.package :]/content/webprogresslistener.js"/>
+[: } :]
+  <script type="application/x-javascript" src="chrome://[:= $_.package :]/content/controller.js"/>
+  <script type="application/x-javascript" src="chrome://[:= $_.package :]/content/[:= $_.source :].js"/>
+
+[: if ($_.ui.indexOf("toolbar") != -1 || $_.ui.indexOf("mainmenu") != -1 || $_.ui.indexOf("contextmenu") != -1) { :]
+  <commandset id="cmdset_file">
+[: if ($_.workspace == "editor") { :]
+    <command id="cmd_new" label="&fileNew.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_open" label="&fileOpen.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_save" label="&fileSave.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+[: } :]
+    <command id="cmd_pageSetup" label="&filePageSetup.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_print" label="&filePrint.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_exit" label="&fileExit.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="cmdset_edit">
+[: if ($_.workspace == "editor") { :]
+    <command id="cmd_undo" label="&editUndo.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_redo" label="&editRedo.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_cut" label="&editCut.label;" tooltiptext="&editCut.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_paste" label="&editPaste.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_delete" label="&editDelete.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+[: } :]
+    <command id="cmd_copy" label="&editCopy.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_selectAll" label="&editSelectAll.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+[: if ($_.workspace == "editor") { :]
+  <commandset id="cmdset_format">
+    <command id="cmd_bold" label="&formatBold.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_italic" label="&formatItalic.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_underline" label="&formatUnderline.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+[: } :]
+[: if ($_.workspace == "browser") { :]
+  <commandset id="cmdset_view">
+    <command id="cmd_back" label="&viewBack.label;" disabled="true" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_forward" label="&viewForward.label;" disabled="true" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_reload" label="&viewReload.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_stop" label="&viewStop.label;" disabled="true" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_go" label="&viewGo.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+[: } :]
+[: if ($_.ui.indexOf("options") != -1) { :]
+  <commandset id="cmdset_tools">
+    <command id="cmd_options" label="&toolsOptions.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+[: } :]
+[: if ($_.ui.indexOf("about") != -1) { :]
+  <commandset id="cmdset_help">
+    <command id="cmd_about" label="&helpAbout.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+[: } :]
+
+  <keyset id="keyset_main">
+[: if ($_.workspace == "editor") { :]
+    <key id="key_new" key="&fileNew.key;" modifiers="accel" command="cmd_new"/>
+    <key id="key_open" key="&fileOpen.key;" modifiers="accel" command="cmd_open"/>
+    <key id="key_save" key="&fileSave.key;" modifiers="accel" command="cmd_save"/>
+    <key id="key_undo" key="&editUndo.key;" modifiers="accel" command="cmd_undo"/>
+    <key id="key_redo" key="&editRedo.key;" modifiers="accel" command="cmd_redo"/>
+    <key id="key_cut" key="&editCut.key;" modifiers="accel" command="cmd_cut"/>
+    <key id="key_paste" key="&editPaste.key;" modifiers="accel" command="cmd_paste"/>
+    <key id="key_delete" keycode="VK_DELETE" command="cmd_delete"/>
+[: } :]
+[: if ($_.workspace == "browser") { :]
+    <key id="key_back" keycode="VK_BACK" command="cmd_back"/>
+[: } :]
+    <key id="key_copy" key="&editCopy.key;" modifiers="accel" command="cmd_copy"/>
+    <key id="key_selectAll" key="&editSelectAll.key;" modifiers="accel" command="cmd_selectAll"/>
+    <key id="key_print" key="&filePrint.key;" modifiers="accel" command="cmd_print"/>
+  </keyset>
+[: } :]
+
+[: if ($_.ui.indexOf("contextmenu") != -1) { :]
+  <popupset>
+[: if ($_.workspace == "editor") { :]
+    <popup id="popup_editor">
+      <menuitem id="menu_cut" class="menuitem-iconic" command="cmd_cut" key="key_cut"/>
+      <menuitem id="menu_copy" class="menuitem-iconic" command="cmd_copy" key="key_copy"/>
+      <menuitem id="menu_paste" class="menuitem-iconic" command="cmd_paste" key="key_paste"/>
+      <menuseparator/>
+      <menuitem id="menu_delete" class="menuitem-iconic" command="cmd_delete" key="key_delete"/>
+      <menuitem id="menu_selectAll" class="menuitem-iconic" command="cmd_selectAll" key="key_selectAll"/>
+    </popup>
+[: } :]
+[: if ($_.workspace == "browser") { :]
+    <popup id="popup_browser">
+      <menuitem id="menu_copy" class="menuitem-iconic" command="cmd_copy" key="key_copy"/>
+      <menuitem id="menu_selectAll" class="menuitem-iconic" command="cmd_selectAll" key="key_selectAll"/>
+    </popup>
+[: } :]
+  </popupset>
+[: } :]
+
+  <toolbox>
+[: if ($_.ui.indexOf("mainmenu") != -1) { :]
+    <menubar id="menubar">
+      <menu id="file_menu" label="&file.label;">
+        <menupopup id="file_popup">
+[: if ($_.workspace == "editor") { :]
+          <menuitem command="cmd_new"/>
+          <menuitem command="cmd_open"/>
+          <menuitem command="cmd_save"/>
+          <menuseparator/>
+[: } :]
+[: if ($_.ui.indexOf("editor") != -1 || $_.ui.indexOf("browser") != -1) { :]
+          <menuitem command="cmd_pageSetup"/>
+          <menuitem command="cmd_print"/>
+          <menuseparator/>
+[: } :]
+          <menuitem command="cmd_exit"/>
+        </menupopup>
+      </menu>
+      <menu id="edit_menu" label="&edit.label;">
+        <menupopup id="edit_popup">
+[: if ($_.workspace == "editor") { :]
+          <menuitem command="cmd_undo"/>
+          <menuitem command="cmd_redo"/>
+          <menuseparator/>
+          <menuitem command="cmd_cut"/>
+          <menuitem command="cmd_copy"/>
+          <menuitem command="cmd_paste"/>
+          <menuitem command="cmd_delete"/>
+          <menuitem command="cmd_selectAll"/>
+[: } :]
+[: if ($_.workspace == "browser") { :]
+          <menuitem command="cmd_copy"/>
+          <menuitem command="cmd_selectAll"/>
+[: } :]
+        </menupopup>
+      </menu>
+[: if ($_.ui.indexOf("editor") != -1) { :]
+      <menu id="format_menu" label="&format.label;">
+        <menupopup id="format_popup">
+          <menuitem command="cmd_bold"/>
+          <menuitem command="cmd_italic"/>
+          <menuitem command="cmd_underline"/>
+        </menupopup>
+      </menu>
+[: } :]
+[: if ($_.workspace == "browser") { :]
+      <menu id="view_menu" label="&view.label;">
+        <menupopup id="view_popup">
+          <menuitem command="cmd_back" key="key_back"/>
+          <menuitem command="cmd_forward"/>
+          <menuseparator/>
+          <menuitem command="cmd_stop"/>
+          <menuitem command="cmd_reload"/>
+        </menupopup>
+      </menu>
+[: } :]
+[: if ($_.ui.indexOf("options") != -1) { :]
+      <menu id="tools_menu" label="&tools.label;">
+        <menupopup id="tools_popup">
+          <menuitem command="cmd_options"/>
+        </menupopup>
+      </menu>
+[: } :]
+[: if ($_.ui.indexOf("about") != -1) { :]
+      <menu id="help_menu" label="&help.label;">
+        <menupopup id="help_popup">
+          <menuitem command="cmd_about"/>
+        </menupopup>
+      </menu>
+[: } :]
+    </menubar>
+[: } :]
+[: if ($_.ui.indexOf("toolbar") != -1) { :]
+    <toolbar id="main-toolbar" mode="icons">
+[: if ($_.workspace == "editor") { :]
+      <toolbarbutton id="cut_button" command="cmd_cut"/>
+      <toolbarbutton id="copy_button" command="cmd_copy"/>
+      <toolbarbutton id="paste_button" command="cmd_paste"/>
+      <toolbarseparator/>
+      <toolbarbutton id="bold_button" command="cmd_bold"/>
+      <toolbarbutton id="italic_button" command="cmd_italic"/>
+      <toolbarbutton id="underline_button" command="cmd_underline"/>
+[: } else if ($_.workspace == "browser") { :]
+      <toolbarbutton id="back_button" tooltiptext="&viewBack.label;" command="cmd_back"/>
+      <toolbarbutton id="forward_button" tooltiptext="&viewForward.label;" command="cmd_forward"/>
+      <toolbarseparator/>
+      <toolbarbutton id="reload_button" tooltiptext="&viewReload.label;" command="cmd_reload"/>
+      <toolbarbutton id="stop_button" tooltiptext="&viewStop.label;" command="cmd_stop"/>
+      <toolbarseparator/>
+      <textbox id="url_text" value="" flex="1" onchange="CommandUpdater.doCommand('cmd_go');"/>
+      <toolbarbutton id="go_button" tooltiptext="&viewGo.label;" command="cmd_go"/>
+[: } :]
+    </toolbar>
+[: } :]
+  </toolbox>
+  <hbox id="main_box" flex="1">
+[: if ($_.ui.indexOf("sidebar") != -1) { :]
+    <vbox id="sidebar_box" width="150" persist="width hidden">
+      <hbox class="paneheader">
+        <description id="sidebar_title" value="&sidebar.label;" flex="1"/>
+        <toolbarbutton id="sidebar_close" class="tabs-closebutton" tooltiptext="&sidebarClose.tooltip;"/>
+      </hbox>
+      <deck id="sidebar_deck" selectedIndex="0" flex="1">
+        <vbox id="sidebar_page1" label="&page1Title.label;" flex="1">
+          <!-- add content for sidebar here -->
+        </vbox>
+      </deck>
+    </vbox>
+
+    <splitter id="sidebar_split" width="0" persist="hidden"/>
+[: } :]
+    <vbox id="workspace_box" flex="1">
+[: if ($_.workspace == "editor") { :]
+      <editor id="content_editor" type="content-primary" src="about:blank" context="popup_editor" flex="1"/>
+[: } else if ($_.workspace == "browser") { :]
+      <browser id="content_browser" type="content-primary" src="about:blank" context="popup_browser" flex="1"/>
+[: } else {:]
+[: } :]
+    </vbox>
+  </hbox>
+[: if ($_.workspace == "browser") { :]
+  <statusbar>
+    <statusbarpanel id="status" label="" crop="end" flex="1"/>
+    <progressmeter id="progress" mode="determined" value="0%" style="display: none"/>
+    <statusbarpanel id="security" label="" style="display: none"/>
+  </statusbar>
+[: } :]
+</window>

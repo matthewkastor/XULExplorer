@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://[:= $_.package :]/skin/options.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://[:= $_.package :]/locale/options.dtd">
+ 
+<prefwindow id="options" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&options.title;">
+ 
+<prefpane id="pane_general" label="&paneGeneral.label;">
+  <preferences>
+    <preference id="pref_thing1" name="[:= $_.package :].thing1" type="string"/>
+    <preference id="pref_thing2" name="[:= $_.package :].thing2" type="bool"/>
+  </preferences>
+
+  <groupbox id="section1">
+    <caption label="&section1.label;"/>
+
+    <hbox align="center">
+      <label value="&thing1.label;" accesskey="&thing1.accesskey;" control="thing1"/>
+      <textbox preference="pref_thing1" id="thing1" width="250px"/>
+    </hbox>
+  </groupbox>
+
+  <groupbox id="section2">
+    <caption label="&section2.label;"/>
+
+    <checkbox preference="pref_thing2" id="thing2" label="&thing2.label;" accesskey="&thing2.accesskey;"/>
+  </groupbox>
+</prefpane>
+
+</prefwindow>

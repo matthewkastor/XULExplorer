@@ -1,0 +1,51 @@
+<!ENTITY applicationWizard.title  "Application Project Wizard">
+
+<!ENTITY destination.label        "New Application">
+<!ENTITY destination.description  "Create a XULRunner application.">
+<!ENTITY destination.hint         "This wizard will create the supporting files needed to make an application.">
+<!ENTITY folder.hint              "Where do you want to save the application?">
+<!ENTITY folder.label             "Folder:">
+<!ENTITY folder.accesskey         "F">
+<!ENTITY chooseFolder.label       "Browse...">
+<!ENTITY chooseFolder.accesskey   "B">
+
+<!ENTITY general.label            "General">
+<!ENTITY general.description      "Enter information for the application.">
+<!ENTITY general.link             "Learn more about application packaging">
+<!ENTITY name.label               "Name:">
+<!ENTITY package.label            "Package name:">
+<!ENTITY id.label                 "ID:">
+<!ENTITY build.label              "Build ID:">
+<!ENTITY version.label            "Version:">
+<!ENTITY vendor.label             "Vendor:">
+
+<!ENTITY target.label             "Target">
+<!ENTITY target.description       "Which XULRunner versions are allowed to run your application?">
+<!ENTITY target.hint              "Choose the minimum and maximum allowed XULRUnner runtime versions that are compatible with your application.">
+<!ENTITY target.link              "Learn more about application packaging">
+<!ENTITY targetMinVer.label       "Minimum version:">
+<!ENTITY targetMaxVer.label       "Maximum version:">
+
+<!ENTITY options.label            "Options">
+<!ENTITY options.description      "General options used to build your application.">
+<!ENTITY source.hint              "What file name do you want to use? Only enter the base filename. Do not enter a file extension.">
+<!ENTITY source.label             "Source:">
+<!ENTITY source.accesskey         "S">
+<!ENTITY title.hint               "What is the main window title of your application?">
+<!ENTITY title.label              "Title:">
+<!ENTITY title.accesskey          "T">
+<!ENTITY workspace.hint           "What type of workspace do you want to use for the application? Menus, toolbars and other features will be auto-populated based on the workspace you choose.">
+<!ENTITY workspace.label          "Workspace:">
+<!ENTITY workspace.accesskey      "W">
+<!ENTITY workspace.none           "None (empty)">
+<!ENTITY workspace.editor         "Rich text editor">
+<!ENTITY workspace.browser        "Web browser">
+
+<!ENTITY ui.label                 "User Interface Features">
+<!ENTITY ui.description           "What UI features should your application support?">
+<!ENTITY uiToolbar.label          "Toolbar">
+<!ENTITY uiMainMenu.label         "Main menu">
+<!ENTITY uiContextMenu.label      "Context menu">
+<!ENTITY uiSidebar.label          "Sidebar">
+<!ENTITY uiOptions.label          "Options dialog">
+<!ENTITY uiAbout.label            "About dialog">

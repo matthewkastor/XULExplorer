@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>Help Overview</title>
+    <style>
+      body { font-family:Verdana,Tahoma; font-size: 10pt }
+      
+      #footer { font-size:8pt }
+    </style>
+  </head>
+  <body>
+    <h1>XUL Explorer</h1>
+    <img src="xulexplorer.png"/>
+
+    <h2>Introduction</h2>
+    <p>XUL Explorer is a simple tool for experimenting with XUL snippets. Type or insert snippets into the editor and you can quickly preview the results.</p>
+    <p>A small library of XUL snippets is also included to help beginners start exploring different parts of XUL.</p>
+    <h2>Basic Features</h2>
+    <p>Some basic editor-type features have been implemented. Simple previewing and error reporting is also available:</p>
+    <ul>
+      <li>Opening and saving to files</li>
+      <li>Edit multiple files using a tabbed editing window</li>
+      <li>Simple printing</li>
+      <li>Clipboard operations and Undo/Redo</li>
+      <li>Previewing on a separate tab or in an external popup window</li>
+      <li>Error reporting using the JavaScript Error Console (there is an error indicator in the statusbar)</li>
+      <li>Best practices checker can scan for XUL structure problems and UI accessibility issues</li>
+    </ul>
+    <p>The Help menu has quick links to the MDC <a href="http://developer.mozilla.org/en/docs/XUL_Reference">XUL reference</a>, <a href="http://developer.mozilla.org/en/docs/XUL_Tutorial">XUL tutorial</a>, and the <a href="http://developer.mozilla.org/en/docs/JavaScript">JavaScript reference</a>.</p>
+    <p>Editor tabs that have been modified display a special icon. XUL Explorer will prompt you to save any modified files before closing.</p>
+    <img src="editor-tabs.png"/>
+
+    <h2>Preview</h2>
+    <p>Previewing can be 'manual' or 'automatic' and can be set in the Options dialog. If you choose 'automatic', changes in the editor cause the preview to be updated. Be careful, since the preview may be updated before you are finished editing, resulting in an error.</p>
+    <p>Use the 'Code' and 'Preview' toggle buttons to switch between code editor and preview pane. Launch a preview in a separate window using the menu or toolbar button.</p>
+    
+    <h2>Snippets</h2>
+    <p>XUL Explorer comes with a small library so XUL and JavaScript snippets. The snippets are displayed in the Snippet panel and are grouped into different categories. you can list all snippets or just those in a specific category</p>
+    <ul>
+      <li>Double-clicking a snippet will insert it into the editor at the current selection. If text is already selected, it will be replaced.</li>
+      <li>The snippets are stored in a JSON formatted file. You can edit the file to add new snippets if you want.</li>
+      <li>You can supply their own snippet file using the Options dialog. When XUL Explorer starts it will merge your snippets into the builtin snippets.</li>
+      <li>You can also choose the default script loaded when XUL Explorer starts. Just set the snippet name in the Options dialog.</li>
+      <li>When using <strong>File > New</strong>, you can select any snippet from the 'Templates' category (such as <em>Window</em> or <em>Dialog</em>), in addition to a blank script.</li>
+    </ul>
+
+    <h2>XUL Checker</h2>
+    <p>The XUL Checker feature is a XUL structure check and best practice guide. It will scan the XUL in the selected editor tab and log any potential problems it finds with the XUL. The checker has the following tests:</p>
+    <ul>
+      <li>Basic Structure - Stuff a schema language would check:
+        <ul>
+          <li>Is the XML well formed?</li>
+          <li>Are any elements unknown?</li>
+          <li>For a given element, are any attributes unknown?</li>
+          <li>For a given element, is it the child of a valid parent?</li>
+          <li>For a given attribute, are the values allowed?</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Best Practices - Stuff that’s recommended for a good, localizable, skinnable and accessible UI:
+        <ul>
+          <li>Are access keys on menus, checkboxes, radiobuttons, buttons and labels linked to controls?</li>
+          <li>Are labels linked to controls using control attribute?</li>
+          <li>Do toolbarbuttons have labels and tooltips (even if the label is hidden)?</li>
+          <li>Are there menu alternatives to toolbar actions (use keyset and commandset)?</li>
+          <li>Is the context attribute used to attach context menus?</li>
+          <li>Are toolbar, menu and button images assigned via CSS or hard coded image attributes?</li>
+          <li>Does the source avoid using inline style?</li>
+          <li>Are radiogroups contained in a groupbox with a caption? (not yet)</li>
+          <li>Does the source declare a DTD for localization of string resources? (not yet)</li>
+          <li>Are labels, captions, accesskeys and other strings pulled from a DTD? (not yet)</li>
+          <li>Does the source import a stylesheet (exception: overlays)? (not yet)</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <h2>Simple Keyword Help</h2>
+    <p>Select a XUL element, right-click and pick <em>Keyword Lookup</em>. XUL Explorer launches the Help Browser with the appropiate MDC XUL reference page for that keyword. Currently, this only works for XUL elements, but XUL attributes could be added as well.</p>
+    <br/>
+    <div id="footer">Written by <a href="http://starkravingfinkle.org">Mark Finkle (<a href="mailto:mark.finkle@gmail.com">mark.finkle@gmail.com</a>)</div>
+  </body>
+</html>

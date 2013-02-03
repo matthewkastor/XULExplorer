@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://explorer/skin/tools/application-project.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://explorer/locale/tools/application-project.dtd">
+
+<wizard id="new-application" title="&applicationWizard.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/template.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/dom.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/io.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/application-generator.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/abstract-generator-wizard.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/application-project.js"/>
+
+  <wizardpage id="destination" label="&destination.label;" description="&destination.description;">
+    <description>&destination.hint;</description>
+    <separator class="thin"/>
+    <description>&folder.hint;</description>
+    <hbox align="center">
+      <label value="&folder.label;" accesskey="&folder.accesskey;" control="folder"/>
+      <textbox id="folder" type="autocomplete" autocompletesearch="simple-autocomplete" enablehistory="true" flex="1"/>
+      <button id="choosefolder" label="&chooseFolder.label;" accesskey="&chooseFolder.accesskey;"/>
+      <image class="required"/>
+    </hbox>
+  </wizardpage>
+
+  <wizardpage id="general" label="&general.label;" description="&general.description;">
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+        <column/>
+      </columns>
+
+      <rows>
+        <row>
+          <label control="name" value="&name.label;"/>
+          <textbox id="name" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="package" value="&package.label;"/>
+          <textbox id="package" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="id" value="&id.label;"/>
+          <textbox id="id" value="name@company.com" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="version" value="&version.label;"/>
+          <textbox id="version" value="1.0.0.0" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="build" value="&build.label;"/>
+          <textbox id="build" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="vendor" value="&vendor.label;"/>
+          <textbox id="vendor" flex="1"/>
+        </row>
+      </rows>
+    </grid>
+    <vbox flex="1"/>
+    <label class="text-link" value="&general.link;" href="http://developer.mozilla.org/en/docs/XUL_Application_Packaging"/>
+  </wizardpage>
+
+  <wizardpage id="target" label="&target.label;" description="&target.description;">
+    <description>&target.hint;</description>
+    <separator class="thin"/>
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+        <column/>
+      </columns>
+
+      <rows>
+        <row>
+          <label control="target-minver" value="&targetMinVer.label;"/>
+          <textbox id="target-minver" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="target-maxver" value="&targetMaxVer.label;"/>
+          <textbox id="target-maxver" flex="1"/>
+          <image class="required"/>
+        </row>
+      </rows>
+    </grid>
+    <vbox flex="1"/>
+    <label class="text-link" value="&target.link;" href="http://developer.mozilla.org/en/docs/XUL_Application_Packaging"/>
+  </wizardpage>
+
+  <wizardpage id="options" label="&options.label;" description="&options.description;">
+    <description>&source.hint;</description>
+    <hbox align="center">
+      <label value="&source.label;" accesskey="&source.accesskey;" control="source"/>
+      <textbox id="source" flex="1"/>
+      <image class="required"/>
+    </hbox>
+    <separator class="thin"/>
+    <description>&title.hint;</description>
+    <hbox align="center">
+      <label value="&title.label;" accesskey="&title.accesskey;" control="title"/>
+      <textbox id="title" flex="1"/>
+      <image class="required"/>
+    </hbox>
+    <separator class="thin"/>
+    <description>&workspace.hint;</description>
+    <hbox align="center">
+      <label value="&workspace.label;" accesskey="&workspace.accesskey;" control="workspace"/>
+      <menulist id="workspace" flex="1">
+        <menupopup>
+          <menuitem value="none" label="&workspace.none;" selected="true"/>
+          <menuitem value="editor" label="&workspace.editor;"/>
+          <menuitem value="browser" label="&workspace.browser;"/>
+        </menupopup>
+      </menulist>
+      <image class="required"/>
+    </hbox>
+  </wizardpage>
+
+  <wizardpage id="ui" label="&ui.label;" description="&ui.description;">
+    <checkbox id="ui-toolbar" label="&uiToolbar.label;"/>
+    <checkbox id="ui-mainmenu" label="&uiMainMenu.label;"/>
+    <checkbox id="ui-contextmenu" label="&uiContextMenu.label;"/>
+    <checkbox id="ui-sidebar" label="&uiSidebar.label;"/>
+    <checkbox id="ui-options" label="&uiOptions.label;"/>
+    <checkbox id="ui-about" label="&uiAbout.label;"/>
+  </wizardpage>
+</wizard>

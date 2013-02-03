@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://explorer/skin/explorer.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://venkman/locale/venkman-overlay.dtd" >
+
+<overlay id="overlay_venkman" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://venkman/content/venkman-overlay.js"/>
+
+  <commandset id="cmdset_tool">
+    <command id="cmd_debugger" label="&venkmanCmd.label;" oncommand="start_venkman();"/>
+  </commandset>
+
+  <menupopup id="popup_tools">
+    <menuitem id="menu_debugger" class="menuitem-iconic" accesskey="&venkmanCmd.accesskey;" command="cmd_debugger" insertafter="menu_console,menusep_tools"/>
+  </menupopup>
+
+
+</overlay>

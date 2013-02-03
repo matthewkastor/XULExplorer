@@ -1,0 +1,15 @@
+[App]
+Name=[:= $_.name :]
+ID=[:= $_.id :]
+Version=[:= $_.version :]
+BuildID=[:= $_.build :]
+Vendor=[:= $_.vendor :]
+
+[Gecko]
+MinVersion=[:= $_.target.minVersion :]
+MaxVersion=[:= $_.target.maxVersion :]
+
+[XRE]
+[: if ($_.ui.indexOf("extensions") != -1) { :]
+EnableExtensionManager=1
+[: } :]

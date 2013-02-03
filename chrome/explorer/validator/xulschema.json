@@ -1,0 +1,838 @@
+{
+  start : ["window", "dialog", "overlay", "prefwindow", "page"],
+
+  elements : [
+    {
+      "name" : "xulelement",
+      "attributes" : [
+        "align", "allowevents", "allownegativeassertions", "class", "coalesceduplicatearcs",
+        "collapsed", "container", "containment", "context", "contextmenu", "datasources", "dir",
+        "empty", "equalsize", "flags", "flex", "height", "hidden", "id", "insertafter", "insertbefore",
+        "left", "maxheight", "maxwidth", "menu", "minheight", "minwidth", "mousethrough", "observes", "ordinal",
+        "orient", "pack", "persist", "popup", "position", "preference-editable", "ref", "removeelement",
+        "sortDirection", "sortResource", "sortResource2", "statustext", "style", "template", "tooltip",
+        "tooltiptext", "top", "uri", "wait-cursor", "width"
+      ],
+      "events" : [
+        "onblur", "onbroadcast", "onchange", "onclick", "oncontextmenu", "ondblclick",
+        "ondragdrop", "ondragenter", "ondragexit", "ondraggesture", "ondragover", "onfocus",
+        "onkeydown", "onkeypress", "onkeyup", "onload", "onmousedown", "onmousemove", "onmouseout", "onmouseover", "onmouseup",
+        "onoverflow", "onselect", "onsyncfrompreference", "onsynctopreference", "onunload", "onunderflow"
+      ],
+      "children" : []
+    },
+    {
+      "name" : "action",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "arrowscrollbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "bbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "binding",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "bindings",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["binding"]
+    },
+    {
+      "name" : "box",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "broadcaster",
+      "attributes" : ["*"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "broadcasterset",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["broadcaster"]
+    },
+    {
+      "name" : "button",
+      "attributes" : ["accesskey", "autoCheck", "checkState", "checked", "command", "crop", "dir", "disabled", "dlgType", "group", "icon", "image", "label", "open", "orient", "tabindex", "type"],
+      "events" : ["oncommand"],
+      "children" : ["menupopup"]
+    },
+    {
+      "name" : "browser",
+      "attributes" : ["autocompleteenabled", "autocompletepopup", "autoscroll", "disablehistory", "disablesecurity", "homepage", "src", "type"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "checkbox",
+      "attributes" : ["accesskey", "checked", "command", "crop", "disabled", "image", "label", "preference", "tabindex"],
+      "events" : ["oncommand"],
+      "children" : []
+    },
+    {
+      "name" : "caption",
+      "attributes" : ["accesskey", "crop", "image", "label", "tabindex"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "colorpicker",
+      "attributes" : ["disabled", "color", "preference", "tabIndex", "type"],
+      "events" : ["onchange"],
+      "children" : []
+    },
+    {
+      "name" : "column",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "columns",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["column"]
+    },
+    {
+      "name" : "command",
+      "attributes" : ["disabled", "label"],
+      "events" : ["oncommand"],
+      "children" : []
+    },
+    {
+      "name" : "commandset",
+      "attributes" : ["commandupdater", "events", "targets"],
+      "events" : ["oncommandupdate"],
+      "children" : ["command"]
+    },
+    {
+      "name" : "conditions",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "content",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "deck",
+      "attributes" : ["selectedindex"],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "description",
+      "attributes" : ["accesskey", "control", "crop", "disabled", "value"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "dialog",
+      "attributes" : ["buttonaccesskeyaccept", "buttonaccesskeycancel", "buttonaccesskeydisclosure", "buttonaccesskeyextra1", "buttonaccesskeyextra2", "buttonaccesskeyhelp", "buttonalign", "buttondir", "buttonlabelaccept", "buttonlabelcancel", "buttonlabeldisclosure", "buttonlabelextra1", "buttonlabelextra2", "buttonlabelhelp", "buttonorient", "buttonpack", "buttons", "defaultButton", "title", "windowtype"],
+      "events" : ["ondialogaccept", "ondialogcancel", "ondialogdisclosure", "ondialogextra1", "ondialogextra2", "ondialoghelp"],
+      "children" : ["*"]
+    },
+    {
+      "name" : "dialogheader",
+      "attributes" : ["crop", "description", "title"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "editor",
+      "attributes" : ["editortype", "src", "type"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "grid",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["columns", "rows"]
+    },
+    {
+      "name" : "grippy",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "groupbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "hbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "iframe",
+      "attributes" : ["src"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "image",
+      "attributes" : ["src", "validate"],
+      "events" : ["onerror", "onload"],
+      "children" : []
+    },
+    {
+      "name" : "key",
+      "attributes" : ["command", "disabled", "key", "keycode", "keytext", "modifiers", "phase"],
+      "events" : ["oncommand"],
+      "children" : []
+    },
+    {
+      "name" : "keyset",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["key"]
+    },
+    {
+      "name" : "label",
+      "attributes" : ["accesskey", "control", "crop", "disabled", "value"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "listbox",
+      "attributes" : ["disableKeyNavigation", "disabled", "preference", "rows", "seltype", "suppressonselect", "tabindex", "value"],
+      "events" : [],
+      "children" : ["listcols", "listhead", "listitem"]
+    },
+    {
+      "name" : "listcell",
+      "attributes" : ["crop", "disabled", "image", "label", "type"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "listcol",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "listcols",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["listcol"]
+    },
+    {
+      "name" : "listhead",
+      "attributes" : ["disabled"],
+      "events" : [],
+      "children" : ["listheader"]
+    },
+    {
+      "name" : "listheader",
+      "attributes" : ["disabled"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "listitem",
+      "attributes" : ["accesskey", "checked", "command", "crop", "current", "disabled", "disabled", "image", "label", "preference", "selected", "tabindex", "type", "value"],
+      "events" : ["oncommand"],
+      "children" : ["listcell"]
+    },
+    {
+      "name" : "member",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "menu",
+      "attributes" : ["acceltext", "accesskey", "allowevents", "crop", "disabled", "key", "label", "menuactive", "open", "sizetopopup", "value"],
+      "events" : [],
+      "children" : ["menupopup"]
+    },
+    {
+      "name" : "menubar",
+      "attributes" : ["accessible", "grippyhidden", "statusbar"],
+      "events" : [],
+      "children" : ["menu"]
+    },
+    {
+      "name" : "menuitem",
+      "attributes" : ["acceltext", "accessible", "accesskey", "allowevents", "autocheck", "checked", "command", "crop", "description", "disabled", "image", "key", "label", "name", , "selected", "tabindex", "type", "validate", "value"],
+      "events" : ["oncommand"],
+      "children" : ["observes"]
+    },
+    {
+      "name" : "menulist",
+      "attributes" : ["accesskey", "crop", "disableautoselect", "disabled", "editable", "focused", "image", "label", "open", "preference", "readonly", "sizetopopup", "src", "tabindex", "value"],
+      "events" : [],
+      "children" : ["menupopup"]
+    },
+    {
+      "name" : "menupopup",
+      "attributes" : ["ignorekeys", "left", "position", "top"],
+      "events" : ["onpopuphidden", "onpopuphiding", "onpopupshowing", "onpopupshown"],
+      "children" : ["menu", "menuitem", "menuseparator"]
+    },
+    {
+      "name" : "menuseparator",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "observes",
+      "attributes" : ["attribute", "element"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "overlay",
+      "attributes" : ["class", "id"],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "page",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "popup",
+      "attributes" : ["ignorekeys", "left", "position", "top"],
+      "events" : ["onpopuphidden", "onpopuphiding", "onpopupshowing", "onpopupshown"],
+      "children" : ["menu", "menuitem", "menuseparator"]
+    },
+    {
+      "name" : "popupset",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["popup", "tooltip"]
+    },
+    {
+      "name" : "preference",
+      "attributes" : ["disabled", "instantApply", "inverted", "name", "readonly", "tabindex", "type"],
+      "events" : ["onchange"],
+      "children" : []
+    },
+    {
+      "name" : "preferences",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["preference"]
+    },
+    {
+      "name" : "prefpane",
+      "attributes" : ["helpURI", "image", "label", "selected", "src"],
+      "events" : ["onpaneload"],
+      "children" : ["*"]
+    },
+    {
+      "name" : "prefwindow",
+      "attributes" : ["buttonalign", "buttondir", "buttonorient", "buttonpack", "buttons", "defaultButton", "lastSelected", "title", "type"],
+      "events" : ["onbeforeaccept", "ondialogaccept", "ondialogcancel", "ondialogdisclosure", "ondialoghelp", "onpaneload"],
+      "children" : ["prefpane", "script"]
+    },
+    {
+      "name" : "progressmeter",
+      "attributes" : ["mode", "value"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "radio",
+      "attributes" : ["accesskey", "command", "crop", "disabled", "focused", "image", "label", , "selected", "tabindex", "value"],
+      "events" : ["oncommand"],
+      "children" : []
+    },
+    {
+      "name" : "radiogroup",
+      "attributes" : ["disabled", "focused", "preference", "tabindex", "value"],
+      "events" : [],
+      "children" : ["radio"]
+    },
+    {
+      "name" : "resizer",
+      "attributes" : ["dir"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "richlistbox",
+      "attributes" : ["suppressonselect"],
+      "events" : [],
+      "children" : ["richlistitem"]
+    },
+    {
+      "name" : "richlistitem",
+      "attributes" : ["disabled", "selected", "tabindex", "value"],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "row",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "rows",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["row"]
+    },
+    {
+      "name" : "rule",
+      "attributes" : ["iscontainer", "isempty", "parent", "parsetype"],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "script",
+      "attributes" : ["src", "type"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "scrollbar",
+      "attributes" : ["curpos", "increment", "maxpos", "pageincrement"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "scrollbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "scrollcorner",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "separator",
+      "attributes" : ["orient"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "spacer",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "splitter",
+      "attributes" : ["collapse", "resizeafter", "resizebefore", "state"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "stack",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "statusbar",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["statusbarpanel"]
+    },
+    {
+      "name" : "statusbarpanel",
+      "attributes" : ["crop", "label", "src"],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "stringbundle",
+      "attributes" : ["src"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "stringbundleset",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["stringbundle"]
+    },
+    {
+      "name" : "tab",
+      "attributes" : ["accesskey", "afterselected", "beforeselected", "crop", "disabled", "image", "label", "linkedpanel", "selected", "validate"],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "tabbrowser",
+      "attributes" : ["autocompleteenabled", "autocompletepopup", "autoscroll", "contentcontextmenu", "contenttooltip", "handlectrlpageupdown", "onnewtab"],
+      "events" : ["onbookmarkgroup"],
+      "children" : []
+    },
+    {
+      "name" : "tabbox",
+      "attributes" : ["eventnode", "handlectrlpageupdown", "handlectrltab"],
+      "events" : [],
+      "children" : ["tabs", "tabpanels"]
+    },
+    {
+      "name" : "tabpanel",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "tabpanels",
+      "attributes" : ["selectedIndex"],
+      "events" : [],
+      "children" : ["tabpanel"]
+    },
+    {
+      "name" : "tabs",
+      "attributes" : ["closebutton", "disableclose", "first-tab", "last-tab", "setfocus", "tooltiptextnew"],
+      "events" : ["onclosetab", "onnewtab", "onselect"],
+      "children" : ["tab"]
+    },
+    {
+      "name" : "template",
+      "attributes" : ["container", "member"],
+      "events" : [],
+      "children" : ["rule"]
+    },
+    {
+      "name" : "textnode",
+      "attributes" : ["value"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "textbox",
+      "attributes" : ["cols", "disabled", "maxlength", "multiline", "preference", "readonly", "rows", "size", "tabindex", "timeout", "type", "value", "wrap"],
+      "events" : ["onchange", "oncommand", "oncompositionstart", "oncompositionend", "oninput"],
+      "children" : []
+    },
+    {
+      "name" : "titlebar",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "toolbar",
+      "attributes" : ["currentset", "customindex", "customizable", "defaultset", "grippyhidden", "grippytooltiptext", "toolbarname"],
+      "events" : [],
+      "children" : ["toolbarbutton", "toolbaritem", "toolbarseparator", "toolbargrippy", "toolbarspacer", "toolbarspring"]
+    },
+    {
+      "name" : "toolbarbutton",
+      "attributes" : ["accesskey", "autoCheck", "checkState", "checked", "command", "crop", "dir", "disabled", "dlgType", "group", "image", "label", "open", "orient", "tabindex", "type", "validate"],
+      "events" : ["oncommand"],
+      "children" : ["menupopup", "observes"]
+    },
+    {
+      "name" : "toolbargrippy",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "toolbaritem",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "toolbarpalette",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["toolbarbutton", "toolbaritem"]
+    },
+    {
+      "name" : "toolbarseparator",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "toolbarset",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "toolbarspacer",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "toolbarspring",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "toolbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["menubar", "toolbar", "toolbarpalette"]
+    },
+    {
+      "name" : "tooltip",
+      "attributes" : ["crop", "default", "label", "noautohide", "position"],
+      "events" : ["onpopuphidden", "onpopuphiding", "onpopupshowing", "onpopupshown"],
+      "children" : ["*"]
+    },
+    {
+      "name" : "tree",
+      "attributes" : ["disableKeyNavigation", "disabled", "enableColumnDrag", "flags", "hidecolumnpicker", "rows", "seltype", "statedatasource", "tabindex"],
+      "events" : ["onselect"],
+      "children" : ["treecols", "treechildren"]
+    },
+    {
+      "name" : "treecell",
+      "attributes" : ["label", "mode", "properties", "ref", "src", "value"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "treechildren",
+      "attributes" : ["alternatingbackground"],
+      "events" : [],
+      "children" : ["treeitem"]
+    },
+    {
+      "name" : "treecol",
+      "attributes" : ["crop", "cycler", "dragging", "fixed", "hidden", "hideheader", "ignoreincolumnpicker", "label", "primary", "sort", "sortActive", "sortDirection", "src", "type"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "treecols",
+      "attributes" : ["pickertooltiptext"],
+      "events" : [],
+      "children" : ["splitter", "treecol"]
+    },
+    {
+      "name" : "treeitem",
+      "attributes" : ["container", "empty", "label", "open", "uri"],
+      "events" : [],
+      "children" : ["treechildren", "treerow", "treeseparator"]
+    },
+    {
+      "name" : "treerow",
+      "attributes" : ["properties"],
+      "events" : [],
+      "children" : ["treecell"]
+    },
+    {
+      "name" : "treeseparator",
+      "attributes" : ["properties"],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "triple",
+      "attributes" : [],
+      "events" : [],
+      "children" : []
+    },
+    {
+      "name" : "vbox",
+      "attributes" : [],
+      "events" : [],
+      "children" : ["*"]
+    },
+    {
+      "name" : "window",
+      "attributes" : ["height", "hidechrome", "id", "screenX", "screenY", "sizemode", "title", "width", "windowtype"],
+      "events" : ["onclose"],
+      "children" : ["*"]
+    },
+    {
+      "name" : "wizard",
+      "attributes" : ["firstpage", "lastpage", "pagestep", "title", "windowtype"],
+      "events" : ["onclose", "onwizardback", "onwizardcancel", "onwizardfinish", "onwizardnext"],
+      "children" : ["*"]
+    },
+    {
+      "name" : "wizardpage",
+      "attributes" : ["description", "label", "next", "pageid"],
+      "events" : ["onpageadvanced", "onpagehide", "onpagerewound", "onpageshow"],
+      "children" : ["*"]
+    }
+  ],
+
+  attributes : [
+    {
+      "name" : "crop",
+      "choices" : ["start", "end", "center", "none", "left", "right"]
+    },
+    {
+      "name" : "validate",
+      "choices" : ["always", "never"]
+    },
+    {
+      "name" : "modifiers",
+      "choices" : ["shift", "alt", "meta", "control", "accel"]
+    },
+    {
+      "name" : "position",
+      "choices" : ["after_start", "after_end", "before_start", "before_end", "end_after", "end_before", "start_after", "start_before", "overlap", "at_pointer", "after_pointer"]
+    },
+    {
+      "name" : "src",
+      "choices" : ["[uri]"]
+    },
+    {
+      "name" : "image",
+      "choices" : ["[uri]"]
+    },
+    {
+      "name" : "align",
+      "choices" : ["start", "center", "end", "baseline", "stretch", "left", "right"]
+    },
+    {
+      "name" : "allowevents",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "allownegativeassertions",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "coalesceduplicatearcs",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "collapsed",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "command",
+      "choices" : ["[id]"]
+    },
+    {
+      "name" : "container",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "debug",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "dir",
+      "choices" : ["ltr", "rtl", "normal", "reverse"]
+    },
+    {
+      "name" : "empty",
+      "choices" : ["true", "false"]
+    },
+    {
+      "name" : "equalsize",
+      "choices" : ["always", "never"]
+    },
+    {
+      "name" : "flags",
+      "choices" : ["dont-test-empty", "dont-build-content"]
+    },
+    {
+      "name" : "key",
+      "choices" : ["[id]"]
+    },
+    {
+      "name" : "observes",
+      "choices" : ["[id]"]
+    },
+    {
+      "name" : "orient",
+      "choices" : ["horizontal", "vertical"]
+    },
+    {
+      "name" : "pack",
+      "choices" : ["start", "center", "end"]
+    },
+    {
+      "name" : "popup",
+      "choices" : ["[id]"]
+    },
+    {
+      "name" : "tooltip",
+      "choices" : ["[id]"]
+    }
+  ],
+
+  tests : [
+    {
+      "name" : "UI/A11Y",
+      "description" : "'accesskey' should be used to allow keyboard shortcut navigation",
+      "checks" : ["//xul:menu[not(@accesskey)]", "//xul:menu/xul:menupopup/xul:menuitem[not(@accesskey)]", "//xul:popup/xul:menuitem[not(@accesskey)]", "//xul:label[@control and not(@accesskey)]", "//radio[not(@accesskey)]", "//checkbox[not(@accesskey)]", "//xul:button[not(@accesskey) and not(@dlgType='accept' or @dlgType='cancel')]"]
+    },
+    {
+      "name" : "A11Y",
+      "description" : "'label' should be used to determine button meaning, even if the label is hidden",
+      "checks" : ["//xul:toolbarbutton[not(@label)]", "//xul:button[not(@label)]"]
+    },
+    {
+      "name" : "A11Y",
+      "description" : "'control' should be used to link labels and descriptions to associated control elements. description is preferred for explanatory text",
+      "checks" : ["//xul:label[not(@control)]", "//xul:description[not(@control)]"]
+    },
+    {
+      "name" : "UI/A11Y",
+      "description" : "'title' should be used to determine window or dialog context",
+      "checks" : ["/xul:window[not(@title)]", "/xul:dialog[not(@title)]", "/xul:wizard[not(@title)]"]
+    },
+    {
+      "name" : "UI/A11Y",
+      "description" : "'tooltip' or 'tooltiptext' should be used to determine context",
+      "checks" : ["//xul:toolbarbutton[not(@tooltip) and not(@tooltiptext) and not(@label)]"]
+    },
+    {
+      "name" : "A11Y",
+      "description" : "'context' should be used to assign popup context menus instead of manually using mouse events",
+      "checks" : ["//*[@onmousedown and not(@context)]", "//*[@onmouseup and not(@context)]"]
+    },
+    {
+      "name" : "CODE",
+      "description" : "'command' should be used to simplify actions and ensure that toolbar buttons have menu item counterparts",
+      "checks" : ["//xul:toolbarbutton[not(@command)]", "//xul:menupopup/xul:menuitem[not(@command)]", "//xul:key[not(@command)]"]
+    },
+    {
+      "name" : "CODE",
+      "description" : "'style' attribute should be avoided, external stylesheets should be used to style elements",
+      "checks" : ["//*[@style]"]
+    },
+    {
+      "name" : "CODE",
+      "description" : "'image' attribute should be avoided,'list-item-image' in CSS should be used to assign images",
+      "checks" : ["//*[@image]"]
+    }
+  ]
+}

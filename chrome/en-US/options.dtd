@@ -1,0 +1,26 @@
+<!ENTITY options.title            "Options">
+
+<!ENTITY paneGeneral.label        "General">
+<!ENTITY startup.label            "Startup">
+<!ENTITY startupScript.label      "Startup script:">
+<!ENTITY startupScript.accesskey  "S">
+<!ENTITY preview.label            "Preview">
+<!ENTITY autoRefresh.label        "Automatically refresh preview">
+<!ENTITY autoRefresh.accesskey    "A">
+
+<!ENTITY paneSnippets.label       "Snippets">
+<!ENTITY userSnippets.hint        "Choose your own snippets file. The snippets will be loaded during startup.">
+<!ENTITY userSnippets.label       "User snippets file:">
+<!ENTITY userSnippets.accesskey   "U">
+<!ENTITY chooseSnippets.label     "Browse">
+<!ENTITY chooseSnippets.accesskey "B">
+
+<!ENTITY paneManifests.label      "Manifests">
+<!ENTITY manifests.hint           "Choose a manifest folder. The manifest files in the folder will be used to include chrome resources that you can access when previewing XUL.">
+<!ENTITY manifests.label          "Manifest folder:">
+<!ENTITY manifests.accesskey      "M">
+<!ENTITY addFolder.label          "Add">
+<!ENTITY addFolder.accesskey      "A">
+<!ENTITY chooseFolder.label       "Browse">
+<!ENTITY chooseFolder.accesskey   "B">
+<!ENTITY manifests.remove         "Remove">

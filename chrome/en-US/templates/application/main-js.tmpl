@@ -1,0 +1,125 @@
+
+// ------------------------------------------------------------------
+// use helper functions to hook up the [:= $_.source :] object so "this"
+// works in the explorer object
+// ------------------------------------------------------------------
+
+function [:= $_.source :]_startup() {
+  [:= $_.source :].startup();
+}
+
+function [:= $_.source :]_shutdown() {
+  [:= $_.source :].shutdown();
+}
+
+
+// ------------------------------------------------------------------
+// attach to window events so [:= $_.source :] object can startup / shutdown
+// ------------------------------------------------------------------
+
+window.addEventListener("load", [:= $_.source :]_startup, false);
+window.addEventListener("unload", [:= $_.source :]_shutdown, false);
+
+
+// ------------------------------------------------------------------
+// [:= $_.source :] object
+// ------------------------------------------------------------------
+
+var [:= $_.source :] = {
+  initialized : false,
+[: if ($_.workspace == "editor") { :]
+  editor : null,
+[: } :]
+  
+  _handleWindowClose : function(event) {
+    // handler for clicking on the 'x' to close the window
+    return this.shutdownQuery();
+  },
+
+[: if ($_.ui.indexOf("sidebar") != -1) { :]
+  _initSidebar : function(sidebarID) {
+    if (sidebarID) {
+      var sidebar = document.getElementById(sidebarID);
+      var sidebarDeck = document.getElementById("sidebar_deck");
+      sidebarDeck.selectedPanel = sidebar;
+      var sidebarTitle = document.getElementById("sidebar_title");
+      sidebarTitle.value = sidebar.getAttribute("label");
+    }
+  },
+
+  toggleSidebar : function(sidebarID, forceOpen) {
+    var sidebarBox = document.getElementById("sidebar_box");
+    var sidebarSplitter = document.getElementById("sidebar_split");
+    if (forceOpen || sidebarBox.hidden) {
+      sidebarBox.hidden = false;
+      sidebarSplitter.hidden = false;
+
+      this._initSidebar(sidebarID);      
+    }
+    else {
+      sidebarBox.hidden = true;
+      sidebarSplitter.hidden = true;
+    }
+  },
+[: } :]
+
+  startup : function() {
+    if (this.initialized)
+      return;
+    this.initialized = true;
+
+    var self = this;
+
+    window.addEventListener("close", function(event) { self._handleWindowClose(event); }, false);
+
+[: if ($_.ui.indexOf("sidebar") != -1) { :]
+    // initialize the sidebar
+    document.getElementById("sidebar_close").addEventListener("command", function(event) { self.toggleSidebar(null, null); }, false);
+    this._initSidebar("sidebar_page1");
+[: } :]
+
+    FileController.init(this);
+    window.controllers.appendController(FileController);
+
+[: if ($_.ui.indexOf("options") != -1) { :]
+    ToolsController.init(this);
+    window.controllers.appendController(ToolsController);
+[: } :]
+[: if ($_.ui.indexOf("about") != -1) { :]
+    HelpController.init(this);
+    window.controllers.appendController(HelpController);
+[: } :]
+    
+[: if ($_.workspace == "editor") { :]
+    FormatController.init(this);
+    window.controllers.appendController(FormatController);
+
+    // initialize the editor
+    this.editor = document.getElementById("content_editor");
+    this.editor.makeEditable("html", false);
+    
+    // set focus to it (requires a delay)
+    setTimeout( function() { self.editor.contentWindow.focus(); }, 50);  
+[: } :]
+[: if ($_.workspace == "browser") { :]
+    ViewController.init(this);
+    window.controllers.appendController(ViewController);
+
+    var browser = document.getElementById("content_browser");
+    browser.addProgressListener(BrowserProgressListener, Components.interfaces.nsIWebProgress.NOTIFY_ALL);
+[: } :]
+  },
+
+  shutdownQuery : function() {
+    // do any shutdown checks
+    // return false to stop the shutdown
+    return true;
+  },
+    
+  shutdown : function() {
+[: if ($_.workspace == "browser") { :]
+    var browser = document.getElementById("content_browser");
+    browser.removeProgressListener(BrowserProgressListener);
+[: } :]
+  }
+};

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://explorer/skin/tools/extension-test.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://explorer/locale/tools/extension-test.dtd">
+
+<wizard id="test-extension" title="&wizard.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/io.js" />
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/dom.js" />
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/extension-tester.js" />
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/extension-test.js" />
+
+  <wizardpage id="target" label="&target.label;" description="&target.description;">
+    <description>&target.hint;</description>
+    <separator class="thin"/>
+    <description>&targetPath.hint;</description>
+    <hbox align="center">
+      <label value="&targetPath.label;"/>
+      <textbox id="target-path" readonly="true" flex="1"/>
+      <button id="choose-target" label="&wizard.search;"/>
+    </hbox>
+  </wizardpage>
+
+  <wizardpage id="profile" label="&profile.label;" description="&profile.description;">
+    <description>&profilePath.hint;</description>
+    <hbox align="center">
+      <label value="&profilePath.label;"/>
+      <textbox id="profile-path" readonly="true" flex="1"/>
+      <button id="choose-profile" label="&wizard.search;"/>
+    </hbox>
+    <vbox flex="1"/>
+    <label class="text-link" value="&profile.link;" href="http://kb.mozillazine.org/Profile_folder"/>
+  </wizardpage>
+
+  <wizardpage id="root" label="&root.label;" description="&root.description;">
+    <description>&rootPath.hint;</description>
+    <hbox align="center">
+      <label value="&rootPath.label;"/>
+      <textbox id="root-path" readonly="true" flex="1"/>
+      <button id="choose-root" label="&wizard.search;"/>
+    </hbox>
+  </wizardpage>
+
+  <wizardpage id="finish" label="&finish.label;">
+    <description>&finish.description;</description>
+  </wizardpage>
+</wizard>

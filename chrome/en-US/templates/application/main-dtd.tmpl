@@ -1,0 +1,67 @@
+<!ENTITY title                 "[:= $_.title :]">
+
+<!ENTITY file.label            "File">
+<!ENTITY filePageSetup.label   "Page Setup">
+<!ENTITY filePrint.label       "Print">
+<!ENTITY filePrint.accesskey   "P">
+<!ENTITY filePrint.key         "P">
+<!ENTITY fileExit.label        "Exit">
+[: if ($_.workspace == "editor") { :]
+<!ENTITY fileNew.label         "New">
+<!ENTITY fileNew.key           "N">
+<!ENTITY fileOpen.label        "Open">
+<!ENTITY fileOpen.accesskey    "O">
+<!ENTITY fileOpen.key          "O">
+<!ENTITY fileSave.label        "Save">
+<!ENTITY fileSave.accesskey    "S">
+<!ENTITY fileSave.key          "S">
+[: } :]
+
+<!ENTITY edit.label            "Edit">
+<!ENTITY editCopy.label        "Copy">
+<!ENTITY editCopy.key          "C">
+<!ENTITY editSelectAll.label   "Select All">
+<!ENTITY editSelectAll.key     "A">
+[: if ($_.workspace == "editor") { :]
+<!ENTITY editUndo.label        "Undo">
+<!ENTITY editUndo.key          "Z">
+<!ENTITY editRedo.label        "Redo">
+<!ENTITY editRedo.key          "Y">
+<!ENTITY editCut.label         "Cut">
+<!ENTITY editCut.key           "X">
+<!ENTITY editPaste.label       "Paste">
+<!ENTITY editPaste.key         "V">
+<!ENTITY editDelete.label      "Delete">
+[: } :]
+
+[: if ($_.workspace == "editor") { :]
+<!ENTITY format.label          "Format">
+<!ENTITY formatBold.label      "Bold">
+<!ENTITY formatItalic.label    "Italic">
+<!ENTITY formatUnderline.label "Underline">
+[: } :]
+
+[: if ($_.workspace == "browser") { :]
+<!ENTITY view.label            "View">
+<!ENTITY viewBack.label        "Back">
+<!ENTITY viewForward.label     "Forward">
+<!ENTITY viewReload.label      "Reload">
+<!ENTITY viewStop.label        "Stop">
+<!ENTITY viewGo.label          "Go">
+[: } :]
+
+[: if ($_.ui.indexOf("options") != -1) { :]
+<!ENTITY tools.label           "Tools">
+<!ENTITY toolsOptions.label    "Options...">
+[: } :]
+
+[: if ($_.ui.indexOf("about") != -1) { :]
+<!ENTITY help.label            "Help">
+<!ENTITY helpAbout.label       "About...">
+[: } :]
+
+[: if ($_.ui.indexOf("sidebar") != -1) { :]
+<!ENTITY sidebar.label         "Sidebar">
+<!ENTITY sidebarClose.tooltip  "Close Sidebar">
+<!ENTITY page1Title.label      "Sidebar Page 1">
+[: } :]

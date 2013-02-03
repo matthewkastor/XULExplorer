@@ -1,0 +1,280 @@
+[
+	{
+	"category":"Templates",
+	"title":"Window",
+	"code":'<?xml version="1.0"?>\n<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>\n<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">\n\n\t<!-- your code here -->\n\n</window>'
+	},
+	{
+	"category":"Templates",
+	"title":"Dialog",
+	"code":'<?xml version="1.0"?>\n<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>\n<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"\n\tbuttons="accept,cancel"\n\tbuttonlabelcancel="Cancel" buttonlabelaccept="OK"\n\tondialogaccept="{accept action}" ondialogcancel="{cancel action}">\n\n\t<!-- your code here -->\n\n</dialog>'
+	},
+	{
+	"category":"Templates",
+	"title":"Wizard",
+	"code":'<?xml version="1.0"?>\n<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>\n<wizard xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">\n\n\t<!-- your code here -->\n\n</wizard>'
+	},
+	{
+	"category":"Script",
+	"title":"Script Block",
+	"code":'<script type="application/x-javascript">\n<![CDATA[\n\t// your code here\n]]>\n</script>\n'
+	},
+	{
+	"category":"Script",
+	"title":"External Script",
+	"code":'<script type="application/x-javascript" src=""/>\n'
+	},
+	{
+	"category":"Style",
+	"title":"External Stylesheet",
+	"code":'<?xml-stylesheet href="" type="text/css"?>\n'
+	},
+	{
+	"category":"Style",
+	"title":"Style Block",
+	"code":'<?xml-stylesheet href="data:text/css,\n\n/* your styles here*/\n\n" type="text/css"?>\n'
+	},
+	{
+	"category":"Controls",
+	"title":"Label",
+	"code":'<label control="{buddy control id}" accesskey="{shortcut key}" value="{label}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Description",
+	"code":'<description control="{buddy control id}" accesskey="{shortcut key}" value="{label}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Button",
+	"code":'<button label="{button label}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Listbox",
+	"code":'<listbox>\n\t<listitem value="{item value}" label="item label"/>\n</listbox>'
+	},
+	{
+	"category":"Controls",
+	"title":"Dropdown (menulist)",
+	"code":'<menulist>\n\t<menupopup>\n\t\t<menuitem value="{item value}" label="item label"/>\n\t</menupopup>\n</menulist>'
+	},
+	{
+	"category":"Controls",
+	"title":"Textbox (single-line)",
+	"code":'<textbox value="{default text}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Textbox (password)",
+	"code":'<textbox type="password"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Textbox (multi-line)",
+	"code":'<textbox multiline="true" value="{default text}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Radio group",
+	"code":'<radiogroup>\n</radiogroup>'
+	},
+	{
+	"category":"Controls",
+	"title":"Radio button",
+	"code":'<radio label="radio label" selected="{true | *false}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Checkbox",
+	"code":'<checkbox label="checkbox label" checked="{true | *false}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Groupbox (plain caption)",
+	"code":'<groupbox>\n\t<caption label="caption label"/>\n</groupbox>'
+	},
+	{
+	"category":"Controls",
+	"title":"Groupbox (checkbox caption)",
+	"code":'<groupbox>\n\t<caption>\n\t\t<checkbox label="checkbox label" checked="{true | *false}"/>\n\t</caption>\n</groupbox>'
+	},
+	{
+	"category":"Controls",
+	"title":"Splitter",
+	"code":'<splitter/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Statusbar",
+	"code":'<statusbar>\n\t<!-- statusbarpanel or spacer or progressmeter or whatever go here -->\n</statusbar>'
+	},
+	{
+	"category":"Controls",
+	"title":"Statusbar Panel",
+	"code":'<statusbarpanel id="panelid" label="{panel label}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Spacer",
+	"code":'<spacer flex="1"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Progress Meter",
+	"code":'<progressmeter mode="{determined | undetermined}" value="{determined value [0 - 100]}"/>'
+	},
+	{
+	"category":"Controls",
+	"title":"Tree",
+	"code":'<tree id="treeid" flex="1">\
+          \n\t<treecols>\
+          \n\t\t<treecol id="treecolid" label="column label" primary="true" flex="1"/>\
+          \n\t</treecols>\
+          \n\n\t<treechildren>\
+          \n\t\t<treeitem container="true" open="true">\
+          \n\t\t\t<treerow>\
+          \n\t\t\t\t<treecell label="item label" properties="{any-props-for-css}"/>\
+          \n\t\t\t</treerow>\
+          \n\n\t\t\t<treechildren>\
+          \n\t\t\t\t<treeitem container="true" open="true">\
+          \n\t\t\t\t\t<treerow>\
+          \n\t\t\t\t\t\t<treecell label="subitem label" properties="{any-props-for-css}"/>\
+          \n\t\t\t\t\t</treerow>\
+          \n\t\t\t\t</treeitem>\
+          \n\t\t\t</treechildren>\
+          \n\t\t</treeitem>\
+          \n\t</treechildren>\
+          \n</tree>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Box",
+	"code":'<box orient="{*horizontal | vertical}">\n</box>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Horizontal Box",
+	"code":'<hbox>\n</hbox>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Vertical Box",
+	"code":'<vbox>\n</vbox>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Stack",
+	"code":'<stack>\n</stack>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Deck",
+	"code":'<deck>\n</deck>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Tab Box",
+	"code":'<tabbox id="tabboxid" flex="1">\n\t<tabs>\n\t\t<!-- tab elements go here -->\n\t</tabs>\n\t<tabpanels flex="1">\n\t\t<!-- tabpanel elements go here -->\n\t</tabpanels>\n</tabbox>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Tab",
+	"code":'<tab label="{tab label}"/>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Tab Panel",
+	"code":'<tabpanel>\n</tabpanel>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Grid (column based)",
+	"code":'<grid flex="1">\n\t<columns>\n\t\t<!-- column items go here -->\n\t</columns>\n\n\t<rows>\n\t\t<!-- row items go here -->\n\t</rows>\n</grid>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Grid (row based)",
+	"code":'<grid flex="1">\n\t<rows>\n\t\t<!-- row items go here -->\n\t</rows>\n\n\t<columns>\n\t\t<!-- column items go here -->\n\t</columns>\n</grid>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Grid Column",
+	"code":'<column flex="1">\n</column>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Grid Row",
+	"code":'<row flex="1">\n</row>'
+	},
+	{
+	"category":"Layouts",
+	"title":"Wizard Page",
+	"code":'<wizardpage>\n</wizardpage>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Toolbox",
+	"code":'<toolbox id="toolboxid">\n\t<!-- menus and toolbars go here -->\n</toolbox>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Menubar",
+	"code":'<menubar id="menubarid">\n\t<menu id="menuid" label="label" accesskey="{accesskey}">\n\t\t<menupopup>\n\t\t\t<!-- menuitems go here -->\n\t\t</menupopup>\n\t</menu>\n</menubar>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Context Menu",
+	"code":'<popupset>\n\t<popup id="popupid">\n\t\t<!-- menuitems go here -->\n\t</popup>\n</popupset>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Menu Item",
+	"code":'<menuitem id="menuid" label="label" oncommand="{action}"/>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Menu Item (image)",
+	"code":'<menuitem id="menuid" class="menuitem-iconic" label="label" oncommand="{action}" image="{image uri}"/>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Menu Item (command & key)",
+	"code":'<menuitem id="menuid" class="menuitem-iconic" command="commandid" key="keyid"/>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Menu Separator",
+	"code":'<menuseparator/>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Toolbar",
+	"code":'<toolbar id="toolbarid">\n\t<!-- toolbarbuttons go here -->\n</toolbar>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Toolbar Button",
+	"code":'<toolbarbutton id="toolid" label="label" oncommand="{action}" image="image uri" tooltiptext="{tooltip}"/>'
+	},
+	{
+	"category":"Menus & Toolbars",
+	"title":"Toolbar Button (command)",
+	"code":'<toolbarbutton id="toolid" command="commandid" tooltiptext="{tooltip}"/>'
+	},
+	{
+	"category":"Content Panels",
+	"title":"IFrame",
+	"code":'<iframe id="frameid" src="{url}" flex="1"/>'
+	},
+	{
+	"category":"Content Panels",
+	"title":"Browser",
+	"code":'<browser id="browserid" type="{content-primary | content}" src="{about:blank | url}" flex="1"/>'
+	},
+	{
+	"category":"Content Panels",
+	"title":"Tabbed Browser",
+	"code":'<tabbrowser id="tabbrowserid" flex="1"/>'
+	}
+]

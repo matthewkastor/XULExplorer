@@ -1,0 +1,23 @@
+<!ENTITY    wizard.title          "Extension Testing Wizard">
+<!ENTITY    wizard.search         "Browse...">
+
+<!ENTITY    target.label          "Target">
+<!ENTITY    target.description    "Choose the target application.">
+<!ENTITY    target.hint           "This is wizard walks you through the process of testing your extension in a target application.">
+<!ENTITY    targetPath.hint       "Enter the path to your target executable. For example, if you want to test in Firefox, enter the path to the 'firefox.exe' you want to use.">
+<!ENTITY    targetPath.label      "Target:">
+
+<!ENTITY    profile.label         "Profile">
+<!ENTITY    profile.description   "Choose the target profile to use for the test.">
+<!ENTITY    profilePath.hint      "Using a separate profile to test extensions is a common practice and keeps your primary profile safe. Please choose a profile folder for the test.">
+<!ENTITY    profilePath.label     "Profile:">
+<!ENTITY    profile.link          "Learn more about profile folders">
+
+<!ENTITY    root.label            "Extension">
+<!ENTITY    root.description      "Choose the extension to test.">
+<!ENTITY    rootPath.hint         "Enter the folder containing the extension to test. Choose the folder that has your 'install.rdf' file.">
+<!ENTITY    rootPath.label        "Folder:">
+
+<!ENTITY    finish.label          "Ready to test">
+<!ENTITY    finish.description    "You are are now ready to start the test. XUL Explorer will now attempt to load the extension in the target application.">
+

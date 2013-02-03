@@ -1,0 +1,10 @@
+/* global skin ------------------------------------------------------------- */
+@import url(chrome://global/skin/);
+
+.wizard-header-icon {
+  list-style-image: url("chrome://explorer/skin/images/exttest-wizard48.png");
+}
+
+.required {
+  list-style-image: url(chrome://explorer/skin/images/exclamation.png);
+}

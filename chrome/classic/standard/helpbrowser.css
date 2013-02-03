@@ -1,0 +1,49 @@
+/* global skin ------------------------------------------------------------- */
+@import url(chrome://global/skin/);
+
+/* toolbar ----------------------------------------------------------------- */
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none !important;
+}
+
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+toolbarbutton {
+  -moz-box-orient: vertical;
+  min-width: 0;
+  -moz-margin-end: 0px;
+}
+
+#tool_back {
+  list-style-image: url(chrome://explorer/skin/images/back.png);
+}
+
+#tool_back[disabled="true"] {
+  list-style-image: url(chrome://explorer/skin/images/back-disabled.png);
+}
+
+#tool_forward {
+  list-style-image: url(chrome://explorer/skin/images/forward.png);
+}
+
+#tool_forward[disabled="true"] {
+  list-style-image: url(chrome://explorer/skin/images/forward-disabled.png);
+}
+
+#tool_reload {
+  list-style-image: url(chrome://explorer/skin/images/reload.png);
+}
+
+#tool_stop {
+  list-style-image: url(chrome://explorer/skin/images/stop.png);
+}
+
+#tool_stop[disabled="true"] {
+  list-style-image: url(chrome://explorer/skin/images/stop-disabled.png);
+}
+
+#tool_go {
+  list-style-image: url(chrome://explorer/skin/images/go.png);
+}

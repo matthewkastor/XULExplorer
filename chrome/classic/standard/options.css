@@ -1,0 +1,14 @@
+/* global skin ------------------------------------------------------------- */
+@import url(chrome://global/skin/);
+
+radio[pane=paneMain] {
+  list-style-image: url(chrome://explorer/skin/images/options-big.png);
+}
+
+radio[pane=paneSnippets] {
+  list-style-image: url(chrome://explorer/skin/images/snippets-big.png);
+}
+
+radio[pane=paneManifests] {
+  list-style-image: url(chrome://explorer/skin/images/folder-search-big.png);
+}

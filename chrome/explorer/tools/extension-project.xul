@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://explorer/skin/tools/extension-project.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://explorer/locale/tools/extension-project.dtd">
+
+<wizard id="new-extension" title="&extensionWizard.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/template.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/dom.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/io.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/extension-generator.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/abstract-generator-wizard.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/tools/extension-project.js"/>
+
+  <wizardpage id="destination" label="&destination.label;" description="&destination.description;">
+    <description>&destination.hint;</description>
+    <separator class="thin"/>
+    <description>&folder.hint;</description>
+    <hbox align="center">
+      <label value="&folder.label;" accesskey="&folder.accesskey;" control="folder"/>
+      <textbox id="folder" type="autocomplete" autocompletesearch="simple-autocomplete" enablehistory="true" flex="1"/>
+      <button id="choosefolder" label="&chooseFolder.label;" accesskey="&chooseFolder.accesskey;"/>
+      <image class="required"/>
+    </hbox>
+  </wizardpage>
+
+  <wizardpage id="general" label="&general.label;" description="&general.description;">
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+        <column/>
+      </columns>
+
+      <rows>
+        <row>
+          <label control="name" value="&name.label;"/>
+          <textbox id="name" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="package" value="&package.label;"/>
+          <textbox id="package" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="id" value="&id.label;"/>
+          <textbox id="id" value="name@company.com" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="version" value="&version.label;"/>
+          <textbox id="version" value="1.0.0.0" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="description" value="&description.label;"/>
+          <textbox id="description" flex="1"/>
+        </row>
+      </rows>
+    </grid>
+    <vbox flex="1"/>
+    <label class="text-link" value="&general.link;" href="http://developer.mozilla.org/en/docs/Install_Manifests"/>
+  </wizardpage>
+
+  <wizardpage id="resources" label="&resources.label;" description="&resources.description;">
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+        <column/>
+      </columns>
+
+      <rows>
+        <row>
+          <label control="homeurl" value="Homepage URL:"/>
+          <textbox id="homeurl" flex="1"/>
+        </row>
+        <row>
+          <label control="updateurl" value="Update URL:"/>
+          <textbox id="updateurl" flex="1"/>
+        </row>
+        <row>
+          <label control="optionsurl" value="Options URL:"/>
+          <textbox id="optionsurl" flex="1"/>
+        </row>
+        <row>
+          <label control="iconurl" value="Icon URL:"/>
+          <textbox id="iconurl" flex="1"/>
+        </row>
+      </rows>
+    </grid>
+    <vbox flex="1"/>
+    <label class="text-link" value="&resources.link;" href="http://developer.mozilla.org/en/docs/Install_Manifests"/>
+  </wizardpage>
+
+  <wizardpage id="contributors" label="&contributors.label;" description="&contributors.description;">
+    <grid flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+        <column/>
+      </columns>
+
+      <rows>
+        <row>
+          <label control="author" value="Author:"/>
+          <textbox id="author" flex="1"/>
+          <image class="required"/>
+        </row>
+        <row>
+          <label control="contributors" value="Contributors:"/>
+          <textbox id="contributors" multiline="true" rows="6" flex="1"/>
+        </row>
+      </rows>
+    </grid>
+    <vbox flex="1"/>
+    <label class="text-link" value="&contributors.link;" href="http://developer.mozilla.org/en/docs/Install_Manifests"/>
+  </wizardpage>
+
+  <wizardpage id="targets" label="&targets.label;" description="&targets.description;">
+    <checkbox id="target-firefox" label="Firefox"/>
+    <hbox align="center">
+      <spacer style="width:10px;"/>
+      <label control="target-firefox-minver" value="Minimum:"/>
+      <textbox id="target-firefox-minver" value="2.0.0.0" style="width:60px;" disabled="true"/>
+      <spacer style="width:10px;"/>
+      <label control="target-firefox-maxver" value="Maximum:"/>
+      <textbox id="target-firefox-maxver" value="3.0.0.*" style="width:60px;" disabled="true"/>
+    </hbox>
+    <checkbox id="target-xulexplorer" label="XUL Explorer"/>
+    <hbox align="center">
+      <spacer style="width:10px;"/>
+      <label control="target-xulexplorer-minver" value="Minimum:"/>
+      <textbox id="target-xulexplorer-minver" value="0.0.0.4" style="width:60px;" disabled="true"/>
+      <spacer style="width:10px;"/>
+      <label control="target-xulexplorer-maxver" value="Maximum:"/>
+      <textbox id="target-xulexplorer-maxver" value="1.0.0.*" style="width:60px;" disabled="true"/>
+    </hbox>
+    <vbox flex="1"/>
+    <label class="text-link" value="&targets.link;" href="http://developer.mozilla.org/en/docs/Install_Manifests"/>
+  </wizardpage>
+
+  <wizardpage id="ui" label="&ui.label;" description="&ui.description;">
+    <checkbox id="ui-toolbarbutton" label="Toolbar button"/>
+    <checkbox id="ui-mainmenu" label="Main menu"/>
+    <checkbox id="ui-contextmenu" label="Context menu"/>
+    <checkbox id="ui-sidebar" label="Sidebar"/>
+    <checkbox id="ui-options" label="Options and Preferences"/>
+    <checkbox id="ui-about" label="About"/>
+  </wizardpage>
+<!--
+  <wizardpage id="events" label="&events.label;" description="&events.description;" >
+    <checkbox id="event-windowload" label="Loading of main application window"/>
+    <checkbox id="event-pageload" label="Loading of webpage in browser"/>
+    <checkbox id="event-tabopen" label="Opening of browser tab"/>
+    <checkbox id="event-tabchange" label="Switching of browser tab"/>
+  </wizardpage>
+-->
+</wizard>

@@ -1,0 +1,5 @@
+overlay chrome://explorer/content/explorer.xul chrome://explorer/content/overlays/venkman.xul
+content explorer file:explorer/
+overlay chrome://explorer/content/explorer.xul chrome://explorer/content/overlays/inspector.xul
+content branding file:explorer/branding/
+locale branding en-US file:explorer/branding/

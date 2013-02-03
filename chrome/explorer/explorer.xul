@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://explorer/skin/explorer.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://explorer/locale/explorer.dtd">
+
+<window id="explorer" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&explorer.title;" style="width: 700px; height: 500px;" persist="screenX screenY width height sizemode">
+
+  <script type="application/x-javascript" src="chrome://global/content/printUtils.js"/>
+  <script type="application/x-javascript" src="chrome://global/content/nsDragAndDrop.js"/>
+  <script type="application/x-javascript" src="chrome://global/content/nsTransferable.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/io.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/xmlformatter.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/utils/command.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/validator/validator.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/controllers.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/editorListener.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/consoleErrors.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/snippets.js"/>
+  <script type="application/x-javascript" src="chrome://explorer/content/explorer.js"/>
+
+  <stringbundle id="explorer_strings" src="chrome://explorer/locale/explorer.properties"/>
+
+  <commandset id="cmdset_file">
+    <command id="cmd_newBlank" label="&fileNewBlank.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_newExtension" label="&fileNewExtension.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_newApplication" label="&fileNewApplication.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_open" label="&fileOpen.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_save" label="&fileSave.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_saveAs" label="&fileSaveAs.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_close" label="&fileClose.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_pageSetup" label="&filePageSetup.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_print" label="&filePrint.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_exit" label="&fileExit.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="cmdset_edit">
+    <command id="cmd_undo" label="&editUndo.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_redo" label="&editRedo.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_cut" label="&editCut.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_copy" label="&editCopy.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_pasteNoFormatting" label="&editPaste.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_delete" label="&editDelete.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_selectAll" label="&editSelectAll.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="cmdset_view">
+    <command id="cmd_sidebar" label="&viewSidebar.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_messages" label="&viewMessages.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_refresh" label="&viewRefresh.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_preview" label="&viewPreview.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_formatter" label="&viewFormatter.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="cmdset_tool">
+    <command id="cmd_checker" label="&toolsChecker.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_console" label="&toolsConsole.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_testExtension" label="&toolsTestExtension.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_addons" label="&toolsAddons.label;" oncommand="CommandUpdater.doCommand(this.id)"/>
+    <command id="cmd_reloadChrome" label="&toolsReloadChrome.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_options" label="&toolsOptions.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="cmdset_help">
+    <command id="cmd_help" label="&helpHelp.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_xulref" label="&helpXULReference.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_xultut" label="&helpXULTutorial.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_jsref" label="&helpJSReference.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_keyword" label="&helpKeyword.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_update" label="&helpUpdate.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+    <command id="cmd_about" label="&helpAbout.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="cmdset_other">
+    <command id="cmd_clearMessages" label="&messagesClear.label;" oncommand="CommandUpdater.doCommand(this.id);"/>
+  </commandset>
+
+  <commandset id="update_select" commandupdater="true" events="select" oncommandupdate="CommandUpdater.updateCommands('cmd_cut,cmd_copy');"/>
+  <commandset id="update_undo" commandupdater="true" events="undo" oncommandupdate="CommandUpdater.updateCommands('cmd_undo,cmd_redo');"/>
+  <commandset id="update_clipboard" commandupdater="true" events="clipboard" oncommandupdate="CommandUpdater.updateCommands('cmd_pasteNoFormatting');"/>
+
+  <keyset id="keyset_explorer">
+    <key id="key_newBlank" key="&fileNewBlank.key;" modifiers="accel" command="cmd_newBlank"/>
+    <key id="key_open" key="&fileOpen.key;" modifiers="accel" command="cmd_open"/>
+    <key id="key_save" key="&fileSave.key;" modifiers="accel" command="cmd_save"/>
+    <key id="key_close" keycode="VK_F4" modifiers="accel" command="cmd_close"/>
+    <key id="key_print" key="&filePrint.key;" modifiers="accel" command="cmd_print"/>
+    <key id="key_undo" key="&editUndo.key;" modifiers="accel" command="cmd_undo"/>
+    <key id="key_redo" key="&editRedo.key;" modifiers="accel" command="cmd_redo"/>
+    <key id="key_cut" key="&editCut.key;" modifiers="accel" command="cmd_cut"/>
+    <key id="key_copy" key="&editCopy.key;" modifiers="accel" command="cmd_copy"/>
+    <key id="key_paste" key="&editPaste.key;" modifiers="accel" command="cmd_pasteNoFormatting"/>
+    <key id="key_delete" keycode="VK_DELETE" command="cmd_delete"/>
+    <key id="key_selectAll" key="&editSelectAll.key;" modifiers="accel" command="cmd_selectAll"/>
+    <key id="key_refresh" keycode="VK_F5" command="cmd_refresh"/>
+    <key id="key_formatter" keycode="VK_F8" command="cmd_formatter"/>
+    <key id="key_checker" keycode="VK_F7" command="cmd_checker"/>
+    <key id="key_help" keycode="VK_F1" command="cmd_help"/>
+  </keyset>
+
+  <popupset>
+    <popup id="popup_editor">
+      <menuitem id="menu_cut" class="menuitem-iconic" command="cmd_cut" key="key_cut"/>
+      <menuitem id="menu_copy" class="menuitem-iconic" command="cmd_copy" key="key_copy"/>
+      <menuitem id="menu_paste" class="menuitem-iconic" command="cmd_pasteNoFormatting" key="key_paste"/>
+      <menuseparator/>
+      <menuitem id="menu_delete" class="menuitem-iconic" command="cmd_delete" key="key_delete"/>
+      <menuitem id="menu_selectAll" class="menuitem-iconic" command="cmd_selectAll" key="key_selectAll"/>
+      <menuseparator/>
+      <menuitem id="menu_keyword" class="menuitem-iconic" command="cmd_keyword"/>
+    </popup>
+    <popup id="popup_messages">
+      <menuitem id="menu_clearMessages" class="menuitem-iconic" command="cmd_clearMessages"/>
+    </popup>
+  </popupset>
+
+  <toolbox id="toolbox_explorer">
+    <menubar id="menubar_explorer">
+      <menu id="menu_file" label="&file.label;" accesskey="&file.accesskey;">
+        <menupopup id="popup_file">
+          <menu id="menu_new" class="menuitem-iconic" label="&fileNew.label;" accesskey="&fileNew.accesskey;">
+            <menupopup id="popup_new">
+              <menuitem id="menu_newBlank" class="menuitem-iconic" accesskey="&fileNewBlank.accesskey;" command="cmd_newBlank" key="key_newBlank"/>
+              <menuseparator/>
+              <menuitem id="menu_newExtension" class="menuitem-iconic" accesskey="&fileNewExtension.accesskey;" command="cmd_newExtension"/>
+              <menuitem id="menu_newApplication" class="menuitem-iconic" accesskey="&fileNewApplication.accesskey;" command="cmd_newApplication"/>
+              <menuseparator/>
+            </menupopup>
+          </menu>
+          <menuitem id="menu_open" class="menuitem-iconic" accesskey="&fileOpen.accesskey;" command="cmd_open" key="key_open"/>
+          <menuitem id="menu_save" class="menuitem-iconic" accesskey="&fileSave.accesskey;" command="cmd_save" key="key_save"/>
+          <menuitem id="menu_saveAs" class="menuitem-iconic" accesskey="&fileSaveAs.accesskey;" command="cmd_saveAs"/>
+          <menuitem id="menu_close" class="menuitem-iconic" accesskey="&fileClose.accesskey;" command="cmd_close" key="key_close"/>
+          <menuseparator/>
+          <menuitem id="menu_pageSetup" class="menuitem-iconic" accesskey="&filePageSetup.accesskey;" command="cmd_pageSetup"/>
+          <menuitem id="menu_print" class="menuitem-iconic" accesskey="&filePrint.accesskey;" command="cmd_print" key="key_print"/>
+          <menuseparator id="menu_FileQuitSeparator"/>
+          <menuitem id="menu_FileQuitItem" class="menuitem-iconic" label="&fileExit.label;" accesskey="&fileExit.accesskey;" command="cmd_exit" key="key_exit"/>
+        </menupopup>
+      </menu>
+      <menu id="menu_edit" label="&edit.label;" accesskey="&edit.accesskey;">
+        <menupopup id="popup_edit">
+          <menuitem id="menu_undo" class="menuitem-iconic" accesskey="&editUndo.accesskey;" command="cmd_undo" key="key_undo"/>
+          <menuitem id="menu_redo" class="menuitem-iconic" accesskey="&editRedo.accesskey;" command="cmd_redo" key="key_redo"/>
+          <menuseparator/>
+          <menuitem id="menu_cut" class="menuitem-iconic" accesskey="&editCut.accesskey;" command="cmd_cut" key="key_cut"/>
+          <menuitem id="menu_copy" class="menuitem-iconic" accesskey="&editCopy.accesskey;" command="cmd_copy" key="key_copy"/>
+          <menuitem id="menu_paste" class="menuitem-iconic" accesskey="&editPaste.accesskey;" command="cmd_pasteNoFormatting" key="key_paste"/>
+          <menuseparator/>
+          <menuitem id="menu_delete" class="menuitem-iconic" accesskey="&editDelete.accesskey;" command="cmd_delete" key="key_delete"/>
+          <menuitem id="menu_selectAll" class="menuitem-iconic" accesskey="&editSelectAll.accesskey;" command="cmd_selectAll" key="key_selectAll"/>
+        </menupopup>
+      </menu>
+      <menu id="menu_view" label="&view.label;" accesskey="&view.accesskey;">
+        <menupopup id="popup_view">
+          <menuitem id="menu_sidebar" class="menuitem-iconic" accesskey="&viewSidebar.accesskey;" command="cmd_sidebar"/>
+          <menuitem id="menu_messages" class="menuitem-iconic" accesskey="&viewMessages.accesskey;" command="cmd_messages"/>
+          <menuseparator/>
+          <menuitem id="menu_refresh" class="menuitem-iconic" accesskey="&viewRefresh.accesskey;" command="cmd_refresh" key="key_refresh"/>
+          <menuitem id="menu_preview" class="menuitem-iconic" accesskey="&viewPreview.accesskey;" command="cmd_preview" key="key_preview"/>
+          <menuseparator/>
+          <menuitem id="menu_formatter" class="menuitem-iconic" accesskey="&viewFormatter.accesskey;" command="cmd_formatter" key="key_formatter"/>
+        </menupopup>
+      </menu>
+      <menu id="menu_tools" label="&tools.label;" accesskey="&tools.accesskey;">
+        <menupopup id="popup_tools">
+          <menuitem id="menu_testExtension" class="menuitem-iconic" accesskey="&toolsTestExtension.accesskey;" command="cmd_testExtension"/>
+          <menuseparator/>
+          <menuitem id="menu_addons" class="menuitem-iconic" accesskey="&toolsAddons.accesskey;" command="cmd_addons"/>
+          <menuseparator id="menusep_tools"/>
+          <menuitem id="menu_checker" class="menuitem-iconic" accesskey="&toolsChecker.accesskey;" command="cmd_checker" key="key_checker"/>
+          <menuitem id="menu_console" class="menuitem-iconic" accesskey="&toolsConsole.accesskey;" command="cmd_console"/>
+<!--          <menuitem id="menu_reloadChrome" class="menuitem-iconic" accesskey="&toolsReloadChrome.accesskey;" command="cmd_reloadChrome"/> -->
+          <menuseparator id="menu_PrefsSeparator"/>
+          <menuitem id="menu_preferences" class="menuitem-iconic" label="&toolsOptions.label;" accesskey="&toolsOptions.accesskey;" command="cmd_options"/>
+        </menupopup>
+      </menu>
+      <menu id="menu_help" label="&help.label;" accesskey="&help.accesskey;">
+        <menupopup id="popup_help">
+          <menuitem id="menu_help" class="menuitem-iconic" accesskey="&helpHelp.accesskey;" command="cmd_help"/>
+          <menuseparator/>
+          <menuitem id="menu_xulref" class="menuitem-iconic" accesskey="&helpXULReference.accesskey;" command="cmd_xulref"/>
+          <menuitem id="menu_xultut" class="menuitem-iconic" accesskey="&helpXULTutorial.accesskey;" command="cmd_xultut"/>
+          <menuitem id="menu_jsref" class="menuitem-iconic" accesskey="&helpJSReference.accesskey;" command="cmd_jsref"/>
+          <menuseparator/>
+          <menuitem id="menu_update" class="menuitem-iconic" accesskey="&helpUpdate.accesskey;" label="&helpUpdate.label;" command="cmd_update"/>
+          <menuseparator id="aboutSeparator"/>
+          <menuitem id="aboutName" class="menuitem-iconic" label="&helpAbout.label;" accesskey="&helpAbout.accesskey;" command="cmd_about"/>
+        </menupopup>
+      </menu>
+    </menubar>
+    <toolbar id="toolbar_explorer" mode="icons" class="chromeclass-toolbar">
+      <toolbarbutton id="tool_open" tooltiptext="&fileOpen.tooltip;" command="cmd_open"/>
+      <toolbarbutton id="tool_save" tooltiptext="&fileSave.tooltip;" command="cmd_save"/>
+      <toolbarseparator/>
+      <toolbarbutton id="tool_cut" tooltiptext="&editCut.tooltip;" command="cmd_cut"/>
+      <toolbarbutton id="tool_copy" tooltiptext="&editCopy.tooltip;" command="cmd_copy"/>
+      <toolbarbutton id="tool_paste" tooltiptext="&editPaste.tooltip;" command="cmd_pasteNoFormatting"/>
+      <toolbarseparator/>
+      <toolbarbutton id="tool_delete" tooltiptext="&editDelete.tooltip;" command="cmd_delete"/>
+      <toolbarseparator/>
+      <toolbarbutton id="tool_refresh" tooltiptext="&viewRefresh.tooltip;" command="cmd_refresh"/>
+      <toolbarseparator/>
+      <toolbarbutton id="tool_preview" tooltiptext="&viewPreview.tooltip;" command="cmd_preview"/>
+    </toolbar>
+  </toolbox>
+
+  <hbox id="main_box" flex="1" persist="height">
+    <vbox id="sidebar_box" persist="width hidden">
+      <hbox class="paneheader">
+        <description id="sidebar_title" value="&sidebar.label;" flex="1"/>
+        <toolbarbutton id="sidebar_close" class="tabs-closebutton" tooltiptext="&sidebarClose.tooltip;"/>
+      </hbox>
+      <deck id="sidebar_deck" selectedIndex="0" flex="1">
+        <vbox id="sidebar_snippets" label="&snippetTitle.label;" flex="1">
+          <hbox align="center">
+            <label control="snippet-type" accesskey="&snippetType.accessKey;">&snippetType.label;:</label>
+            <menulist id="snippet-type" flex="1">
+              <menupopup>
+              </menupopup>
+            </menulist>
+          </hbox>
+          <listbox id="snippets-list" flex="1"/>
+        </vbox>
+      </deck>
+    </vbox>
+
+    <splitter id="sidebar_split" width="0" persist="hidden"/>
+
+    <vbox id="workspace" flex="1">
+      <tabbox id="workspace_tabbox" flex="1" persist="height">
+        <tabs id="workspace_tabs" closebutton="true" onclosetab="CommandUpdater.doCommand('cmd_close');"/>
+        <hbox id="workspaceview_box">
+          <toolbarbutton id="workspaceview_editor" label="&editor.label;" group="workspaceview" tooltiptext="&editor.tooltip;"/>
+          <toolbarbutton id="workspaceview_preview" label="&preview.label;" group="workspaceview"  tooltiptext="&preview.tooltip;"/>
+        </hbox>
+        <tabpanels id="workspace_tabpanels" flex="1"/>
+        <iframe id="preview_frame" src="about:blank" flex="1" collapsed="true"/>
+      </tabbox>
+    </vbox>
+  </hbox>
+
+  <splitter id="messages_split" hidden="true" persist="hidden"/>
+
+  <vbox id="messages_box" hidden="true" persist="height hidden">
+    <hbox class="paneheader">
+      <description value="&messages.label;" flex="1"/>
+      <toolbarbutton id="messages_close" class="tabs-closebutton" tooltiptext="&messagesClose.tooltip;"/>
+    </hbox>
+    <grid id="output_grid" context="popup_messages" flex="1">
+      <columns>
+        <column/>
+        <column flex="1"/>
+      </columns>
+
+      <rows id="output">
+      </rows>
+    </grid>
+  </vbox>
+
+  <statusbar>
+    <statusbarpanel id="statuspanel" flex="1"/>
+    <statusbarpanel id="textpos"/>
+    <statusbarpanel id="jsconsole">
+      <image id="img_jsconsole" mode="ok" tooltiptext="&statusConsole.tooltip;" ondblclick="CommandUpdater.doCommand('cmd_console');"/>
+    </statusbarpanel>
+  </statusbar>
+</window>

@@ -1,0 +1,6 @@
+pref("extensions.[:= $_.package :].boolpref", false);
+pref("extensions.[:= $_.package :].intpref", 0);
+pref("extensions.[:= $_.package :].stringpref", "A string");
+
+// See http://kb.mozillazine.org/Localize_extension_descriptions
+pref("extensions.[:= $_.id :].description", "chrome://[:= $_.package :]/locale/[:= $_.package :].properties");
